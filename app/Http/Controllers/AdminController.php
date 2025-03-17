@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Datatable;
 use Illuminate\Http\Request;
-use App\Models\crud;
 
 class AdminController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-
     public function index()
     {
-        $datatable = crud::all();
+        $datatable = Datatable::all();
         return view('admin.index', compact('datatable'));
     }
 }

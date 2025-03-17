@@ -25,13 +25,16 @@ Route::get('/home',function(){
     return view('home');
 });
 
+Route::get('/adminn/tables/create', function () {
+    return view('admin.create');
+})->name('datatable.create');
 
-Route::get('/adminn', function () {
-    return view('admin.index');
-});
 
-Route::resource('datatable', DatatableController::class);
-
+Route::get('/adminn', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/adminn/tables', function () {
+    $datatable = \App\Models\Datatable::all(); // Sesuaikan dengan model Anda
+    return view('admin.tables', compact('datatable'));
+})->name('dashboard.tables');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
