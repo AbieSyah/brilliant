@@ -38,7 +38,7 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-subheading">Boking camp pilihan kamu di</div>
+                <div class="masthead-subheading">Booking camp pilihan kamu di</div>
                 <div class="masthead-heading text-uppercase">Brilliant inn</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
