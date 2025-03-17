@@ -25,11 +25,6 @@ Route::get('/home',function(){
     return view('home');
 });
 
-Route::get('/adminn/tables/create', function () {
-    return view('admin.create');
-})->name('datatable.create');
-
-
 Route::get('/adminn', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/adminn/tables', function () {
     $datatable = \App\Models\Datatable::all(); // Sesuaikan dengan model Anda
@@ -47,6 +42,9 @@ Route::post('/register', [RegisterController::class, 'store'])
 
 Route::get('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])->name('password.request');
 Route::post('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'update'])->name('password.update');
+
+Route::resource('datatable', DatatableController::class);
+
 
 
 

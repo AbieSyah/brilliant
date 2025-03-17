@@ -131,7 +131,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Tables</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="adminn">Dashboard</a></li>
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
                     <div class="card mb-4">
@@ -162,10 +162,17 @@
                                             <td>{{ $crud->start_date }}</td>
                                             <td>
                                                 <a href="{{ route('datatable.edit', $crud->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                                <form action="{{ route('datatable.destroy', $crud->id) }}" method="POST" style="display:inline-block;">
+                                                <form id="delete-form-{{ $crud->id }}" 
+                                                        action="{{ route('datatable.destroy', $crud->id) }}" 
+                                                        method="POST" 
+                                                        style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                    <button type="button" 
+                                                        class="btn btn-danger btn-sm" 
+                                                        onclick="confirmDelete({{ $crud->id }})">
+                                                        Delete
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -196,6 +203,31 @@
         </div>
     </div>
 
+<script>
+    function confirmDelete(id) {
+        if (confirm('Are you sure you want to delete this data?')) {
+            document.getElementById('delete-form-' + id).submit();
+        }
+    }
+</script>
+<script>
+    function confirmDelete(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit();
+            }
+        })
+    }
+</script>
+
     <!-- Vendor JS Files -->
     <script src="{{ asset('/admin/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('/admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -216,6 +248,9 @@
     <script src="{{ asset('/admin/assets/demo/chart-bar-demo.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('admin/js/datatables-simple-demo.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Add this before closing </body> tag -->
+
 
 </body>
 
