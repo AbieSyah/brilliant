@@ -18,22 +18,30 @@ use App\Http\Controllers\DatatableController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/home',function(){
     return view('home');
 });
 
-Route::get('/adminn', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/adminn/tables', function () {
-    $datatable = \App\Models\Datatable::all(); // Sesuaikan dengan model Anda
-    return view('admin.tables', compact('datatable'));
-})->name('dashboard.tables');
+Route::get('/chart', function () {
+    return view('chart');
+});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/adminn', function () {
+        return view('admin.index');
+    });
+
+    Route::get('/adminn/tables', function () {
+        $datatable = \App\Models\Datatable::all(); // Sesuaikan dengan model Anda
+        return view('admin.tables', compact('datatable'));
+    })->name('dashboard.tables');
+});
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])

@@ -11,14 +11,19 @@
         <link href="{{ asset ('/admin/css/styles.css')}}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
+    <body class="{{ $bodyClass ?? 'bg-white' }}"></body>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="text-left mt-3">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="{{ asset('/admin/img/logo-mitra.png') }}" alt="Logo Mitra" style="width: 100px;">
+                                    </div>
+                                </div>
+                                <div class="card shadow-lg border-0 rounded-lg mt-3">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
                                         @if ($errors->any())
@@ -59,7 +64,7 @@
                     </div>
                 </main>
             </div>
-            <div id="layoutAuthentication_footer">
+            <body class="{{ $bodyClass ?? 'bg-success' }}"><div id="layoutAuthentication_footer"></div>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">

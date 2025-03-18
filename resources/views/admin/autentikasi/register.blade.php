@@ -7,18 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Register - SB Admin</title>
+    <title>Register - admin</title>
     <link href="{{ asset('/admin/css/styles.css')}}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-primary">
+<body class="{{ $bodyClass ?? 'bg-white' }}"></body>
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-7">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="{{ asset('/admin/img/logo-mitra.png') }}" alt="Logo Mitra" style="width: 100px;">
+                                    </div>
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
                                     <h3 class="text-center font-weight-light my-4">Create Account</h3>
