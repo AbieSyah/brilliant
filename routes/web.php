@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/adminn', function () {
         return view('admin.index');
     });
+    Route::get('/adminn', [DatatableController::class, 'index'])->name('datatable.index');
 
     Route::get('/adminn/tables', function () {
         $datatable = \App\Models\Datatable::all(); // Sesuaikan dengan model Anda
