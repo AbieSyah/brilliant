@@ -58,16 +58,25 @@
                                 <div class="mb-3">
                                     <label for="office" class="form-label">Office</label>
                                     <input type="text" class="form-control @error('office') is-invalid @enderror" 
-                                           id="office" name="office" value="{{ old('office') }}" required>
-                           val      @error('office')
+                                           id="office" name="office" value="{{ old('office') }}" nullable>
+                                 @error('office')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="start_date" class="form-label">Start Date</label>
+                                    <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                                    <input type="text" class="form-control @error('jenis_kelamin') is-invalid @enderror" 
+                                           id="jenis_kelamin" name="jenis_kelamin" value="{{ old('jenis_kelamin') }}" required>
+                                 @error('jenis_kelamin')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="start_date" class="form-label">date of birth    </label>
                                     <input type="date" class="form-control @error('start_date') is-invalid @enderror" 
-                                           id="start_date" name="start_date" value="{{ old('start_date') }}" required>
+                                           id="start_date" name="start_date" value="{{ old('') }}" required>
                                     @error('start_date')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror

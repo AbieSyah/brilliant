@@ -97,10 +97,10 @@
             <main>
 
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Tables</h1>
+                    <h1 class="mt-4">Employee data</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="adminn">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Tables</li>
+                        <li class="breadcrumb-item active">Employee data</li>
                     </ol>
                     <div class="card mb-4">
                         <div class="card-header">
@@ -110,12 +110,13 @@
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
-                                <thead>
+                                <thead> 
                                     <tr>
                                         <th>Name</th>
                                         <th>Position</th>
                                         <th>Age</th>
                                         <th>Office</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Start Date</th>
                                         <th>Actions</th>
                                     </tr>
@@ -127,6 +128,7 @@
                                             <td>{{ $crud->position }}</td>
                                             <td>{{ $crud->age }}</td>
                                             <td>{{ $crud->office }}</td>
+                                            <td>{{ $crud->jenis_kelamin }}</td>
                                             <td>{{ $crud->start_date }}</td>
                                             <td>
                                                 <a href="{{ route('datatable.edit', $crud->id) }}" class="btn btn-primary btn-sm">Edit</a>

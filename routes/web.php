@@ -34,12 +34,12 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::get('/adminn', function () {
-        return view('admin.index');
+        return view('login.index');
     });
     Route::get('/adminn', [DatatableController::class, 'index'])->name('datatable.index');
 
     Route::get('/adminn/tables', function () {
-        $datatable = \App\Models\Datatable::all(); // Sesuaikan dengan model Anda
+        $datatable = \App\Models\Datatable::all(); // Sesuaikan dengan model 
         return view('admin.tables', compact('datatable'));
     })->name('dashboard.tables');
 });
