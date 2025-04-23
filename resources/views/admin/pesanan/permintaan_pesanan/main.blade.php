@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Website Management - BCamp Admin</title>
+    <title>Pesanan Management - BCamp Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="{{ asset('/admin/css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -74,8 +74,7 @@
 
                         <div class="sb-sidenav-menu-heading">Transaksi</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTransaction" aria-expanded="false"
-                            aria-controls="collapseTransaction">
+                            data-bs-target="#collapseTransaction" aria-expanded="false" aria-controls="collapseTransaction">
                             <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
                             Pesanan
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -94,7 +93,7 @@
                             </nav>
                         </div>
                     </div>
-                </div>  
+                </div>
             </nav>
         </div>
 
@@ -102,80 +101,50 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Website Management</h1>
+                    <h1 class="mt-4">Daftar Pesanan</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="{{ url('adminn') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Website Content</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Pesanan</li>
                     </ol>
-                    
-                    <!-- First Row - 3 Cards -->
-                    <div class="row mb-4">
-                        <!-- Beranda Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #148BD499">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Beranda</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.beranda') }}">Edit Beranda Content</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Galeri Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #08791999">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Galeri</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.galeri') }}">Edit Galeri Content</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Data Pesanan
                         </div>
-
-                        <!-- Fasilitas Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #FCB40499">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Fasilitas</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.fasilitas') }}">Edit Fasilitas Content</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Second Row - 2 Cards -->
-                    <div class="row justify-content-center">
-                        <!-- Booking Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #A3D9D9">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Booking</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.booking') }}">Edit Booking Content</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Footer Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #7B9669">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Footer</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.footer') }}">Edit Footer Content</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Pengguna</th>
+                                        <th>Type Kamar</th>
+                                        <th>Status Pesanan</th>
+                                        <th>Keterangan</th>
+                                        <th>Tanggal Pesanan</th>
+                                        <th>Durasi Pesanan</th>
+                                        <th>Total Harga</th> <!-- Added new column -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($pesanans as $index => $pesanan)
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $pesanan->nama_pengguna }}</td>
+                                        <td>{{ $pesanan->tipe_kamar }}</td>
+                                        <td>
+                                            <span class="badge bg-{{ $pesanan->status_pesanan == 'Disetujui' ? 'success' : ($pesanan->status_pesanan == 'Ditolak' ? 'danger' : 'warning') }}">
+                                                {{ $pesanan->status_pesanan }}
+                                            </span>
+                                        </td>
+                                        <td>{{ $pesanan->keterangan }}</td>
+                                        <td>{{ date('d/m/Y', strtotime($pesanan->tanggal_pesanan)) }}</td>
+                                        <td>{{ $pesanan->durasi_pesanan }}</td>
+                                        <td>Rp {{ number_format($pesanan->total_harga, 0, ',', '.') }}</td> <!-- Added new column with formatted price -->
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -195,9 +164,6 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('/admin/js/scripts.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('/admin/assets/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('/admin/assets/demo/chart-bar-demo.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('admin/js/datatables-simple-demo.js') }}"></script>
 </body>

@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DatatableController;
+use App\Http\Controllers\PesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,6 +104,10 @@ Route::middleware(['auth'])->group(function () {
 
     // If you need the datatable functionality, move it to a different route
     Route::get('/adminn/data', [DatatableController::class, 'index'])->name('datatable.index');
+
+    // Pesanan routes
+    Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('admin.pesanan.main');
+    Route::get('/admin/pesanan/history', [PesananController::class, 'history'])->name('admin.pesanan.history');
 });
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
