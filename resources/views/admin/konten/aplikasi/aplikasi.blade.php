@@ -7,28 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Aplikasi Management - BCamp Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="{{ asset('/admin/css/styles.css') }}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="sb-nav-fixed">
-
+    <!-- Top Navigation -->
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="{{ route('admin.dashboard') }}">Selamat Datang !</a>
-        <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars"></i></button>
-        <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        </form>
-        <!-- Navbar-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+            <i class="fas fa-bars"></i>
+        </button>
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></form>
+        <!-- Profile Navigation -->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown d-flex align-items-center">
-                </div>
-                <!-- Profile Icon & Dropdown -->
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     <i class="fas fa-user fa-fw"></i>
@@ -48,9 +43,8 @@
     </nav>
 
     <div id="layoutSidenav">
-
+        <!-- Side Navigation -->
         <div id="layoutSidenav_nav">
-
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
@@ -73,7 +67,6 @@
                                 <a class="nav-link" href="{{ route('admin.konten.aplikasi') }}">Aplikasi BCamp</a>
                             </nav>
                         </div>
-
                         <div class="sb-sidenav-menu-heading">Transaksi</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseTransaction" aria-expanded="false"
@@ -89,51 +82,69 @@
                                 <a class="nav-link" href="layout-sidenav-light.html">Riwayat Pesanan</a>
                             </nav>
                         </div>
-
-                        <a class="nav-link" href="{{ route('dashboard.tables') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Testing
-                        </a>
                     </div>
                 </div>
             </nav>
-
         </div>
 
+        <!-- Main Content -->
         <div id="layoutSidenav_content">
             <main>
-
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Dashboard</h1>
+                    <h1 class="mt-4">Aplikasi Management</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Statistik Pengunjung dan Pesanan</li>
+                        <li class="breadcrumb-item"><a href="{{ url('adminn') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Aplikasi Content</li>
                     </ol>
-                    <div class="row">
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Statistik Pengunjung
+
+                    <!-- Card Container with max-width -->
+                    <div class="container" style="max-width: 1200px;">
+                        <!-- Cards Row -->
+                        <div class="row justify-content-center">
+                            <!-- Beranda Card -->
+                            <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="card text-white h-100 shadow" style="background-color: #527AA6">
+                                    <div class="card-body py-4">
+                                        <h4 class="card-title mb-0">Manage Beranda</h4>
                                     </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
+                                    <div class="card-footer d-flex align-items-center justify-content-between py-3">
+                                        <a class="small text-white stretched-link" href="{{ route('admin.konten.beranda.aplikasi') }}">Edit Beranda Content</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Statistik Pesanan
+
+                            <!-- Kamar Card -->
+                            <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="card text-white h-100 shadow" style="background-color: #D4ACA2">
+                                    <div class="card-body py-4">
+                                        <h4 class="card-title mb-0">Manage Kamar</h4>
                                     </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas>
+                                    <div class="card-footer d-flex align-items-center justify-content-between py-3">
+                                        <a class="small text-white stretched-link" href="{{ route('admin.konten.kamar.aplikasi') }}">Edit Kamar Content</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fasilitas Card -->
+                            <div class="col-xl-4 col-md-6 mb-4">
+                                <div class="card text-white h-100 shadow" style="background-color: #DC580599">
+                                    <div class="card-body py-4">
+                                        <h4 class="card-title mb-0">Manage Fasilitas</h4>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between py-3">
+                                        <a class="small text-white stretched-link" href="{{ route('admin.konten.fasilitas.aplikasi') }}">Edit Fasilitas Content</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </main>
 
+            <!-- Footer -->
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
@@ -144,6 +155,8 @@
             </footer>
         </div>
     </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="{{ asset('/admin/js/scripts.js') }}"></script>
