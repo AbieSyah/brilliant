@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <htm lang="en">
+
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,16 +13,21 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet"
+            type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ asset ('landing-page/css/styles.css')}}" rel="stylesheet" />
+        <link href="{{ asset('landing-page/css/styles.css')}}" rel="stylesheet" />
     </head>
+
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="{{ asset ('landing-page/assets/img/logo.svg')}}" alt="..." /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#page-top"><img src="{{ asset('landing-page/assets/img/logo.svg')}}"
+                        alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
@@ -43,73 +49,75 @@
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
             </div>
         </header>
-        
-<section class="page-section" id="gallery">
-<div class="container">
-<div class="gallery-text">
-            <h2 class="section-subheading text-muted">KENANGAN BERSAMA B-CAMP MU!</h2>
-            <h3 class="section-heading text-uppercase">Galeri B-Camp</h3>
-        </div>
-    <div class="row text-center">
-        <!-- Video Container -->
-        <div class="col-md-12 mb-5">
-            <div class="video-container">
-                <video controls class="w-100">
-                    <source src="video.mp4" type="video/mp4">
-                    Your browser does not support HTML5 video.
-                </video>
-            </div>
-        </div>
-        
-        <!-- Image Gallery -->
-        <div class="col-md-4">
-            <div class="gallery-item">
-                <img src="{{ asset ('landing-page/assets/img/G1.png')}}" alt="Gambar 1" class="img-fluid rounded mb-3">
-                <!-- <h4 class="my-3">Gallery Image 1</h4>
-                <p class="text-muted">Deskripsi gambar 1</p> -->
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="gallery-item2">
-                <img src="{{ asset ('landing-page/assets/img/G2.png')}}" alt="Gambar 2" class="img-fluid rounded mb-2">
-                <!-- <h4 class="my-3">Gallery Image 2</h4>
-                <p class="text-muted">Deskripsi gambar 2</p> -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- View More Button -->
-    <div class="text-center">
-        <a href="more.html" class="btn btn-view-more">
-            Lihat lebih banyak &rarr;
-        </a>
-    </div>
-</div>
-</section>
 
-<section class="page-section bg-light" id="fasilitas">
-        <div class="container">
-        <h1>Fasilitas</h1>
-        <p>Jelajahi Asrama dan Fasilitas lainnya di B-Camp!</p>
-        <div class="card-container">
-            <div class="card">
-                <h2>Reguler</h2>
-                <img src="{{ asset ('landing-page/assets/img/F1.png')}}" alt="Reguler">
-                <button>Detail</button>
+        <section class="page-section" id="gallery">
+            <div class="container">
+                <div class="gallery-text">
+                    <h2 class="section-subheading text-muted">KENANGAN BERSAMA B-CAMP MU!</h2>
+                    <h3 class="section-heading text-uppercase">Galeri B-Camp</h3>
+                </div>
+                <div class="row text-center">
+                    <!-- Video Container -->
+                    <div class="col-md-12 mb-5">
+                        <div class="video-container">
+                            <video controls class="w-100">
+                                <source src="video.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Image Gallery -->
+                    <div class="col-md-4">
+                        <div class="gallery-item">
+                            <img src="{{ asset('landing-page/assets/img/G1.png')}}" alt="Gambar 1"
+                                class="img-fluid rounded mb-3">
+                            <!-- <h4 class="my-3">Gallery Image 1</h4>
+                <p class="text-muted">Deskripsi gambar 1</p> -->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-item2">
+                            <img src="{{ asset('landing-page/assets/img/G2.png')}}" alt="Gambar 2"
+                                class="img-fluid rounded mb-2">
+                            <!-- <h4 class="my-3">Gallery Image 2</h4>
+                <p class="text-muted">Deskripsi gambar 2</p> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View More Button -->
+                <div class="text-center">
+                    <a href="more.html" class="btn btn-view-more">
+                        Lihat lebih banyak &rarr;
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <h2>VIP</h2>
-                <img src="{{ asset ('landing-page/assets/img/F1.png')}}" alt="VIP">
-                <button>Detail</button>
+        </section>
+
+        <section class="page-section bg-light" id="fasilitas">
+            <div class="container">
+                <h1>Fasilitas</h1>
+                <p>Jelajahi Asrama dan Fasilitas lainnya di B-Camp!</p>
+                <div class="card-container">
+                    <div class="card">
+                        <h2>Reguler</h2>
+                        <img src="{{ asset('landing-page/assets/img/F1.png')}}" alt="Reguler">
+                        <button>Detail</button>
+                    </div>
+                    <div class="card">
+                        <h2>VIP</h2>
+                        <img src="{{ asset('landing-page/assets/img/F1.png')}}" alt="VIP">
+                        <button>Detail</button>
+                    </div>
+                    <div class="card">
+                        <h2>Homestay</h2>
+                        <img src="{{ asset('landing-page/assets/img/F1.png')}}" alt="Homestay">
+                        <button>Detail</button>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h2>Homestay</h2>
-                <img src="{{ asset ('landing-page/assets/img/F1.png')}}" alt="Homestay">
-                <button>Detail</button>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
         <!-- About-->
         <section class="page-section" id="about">
             <div class="container">
@@ -169,8 +177,8 @@
                             </h4>
                         </div>
                     </li> -->
-                </ul>
-            </div>
+                    </ul>
+                </div>
         </section>
         <!-- Team-->
         <!-- <section class="page-section bg-light" id="team">
@@ -274,24 +282,28 @@
                             </h4>
                         </div>
                     </li> -->
-                </ul>
-            </div>
+                    </ul>
+                </div>
         </section>
         <!-- Clients-->
         <div class="py-5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                                src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg"
+                                alt="..." aria-label="Google Logo" /></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                                src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
                     </div>
                     <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" /></a>
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg"
+                                alt="..." aria-label="IBM Logo" /></a>
                     </div>
                 </div>
             </div>
@@ -302,9 +314,12 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
                     <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
@@ -318,7 +333,8 @@
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                            alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -327,7 +343,10 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                        deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                        repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -338,7 +357,8 @@
                                             Illustration
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
                                     </button>
@@ -353,7 +373,8 @@
         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                            alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -362,7 +383,10 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                        deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                        repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -373,7 +397,8 @@
                                             Graphic Design
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
                                     </button>
@@ -388,7 +413,8 @@
         <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                            alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -397,7 +423,10 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                        deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                        repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -408,7 +437,8 @@
                                             Identity
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
                                     </button>
@@ -423,7 +453,8 @@
         <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                            alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -432,7 +463,10 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                        deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                        repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -443,7 +477,8 @@
                                             Branding
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
                                     </button>
@@ -458,7 +493,8 @@
         <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                            alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -467,7 +503,10 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                        deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                        repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -478,7 +517,8 @@
                                             Website Design
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
                                     </button>
@@ -493,7 +533,8 @@
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                            alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -502,7 +543,10 @@
                                     <h2 class="text-uppercase">Project Name</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                        deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                        repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
@@ -513,7 +557,8 @@
                                             Photography
                                         </li>
                                     </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                        type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
                                     </button>
@@ -534,4 +579,5 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
-</html>
+
+    </html>
