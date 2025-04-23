@@ -56,30 +56,42 @@
                         <div class="sb-sidenav-menu-heading">Manajemen Antarmuka</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseInterface" aria-expanded="false" aria-controls="collapseInterface">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-desktop"></i></div>
                             Konten
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseInterface" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.konten.website') }}">Website BCamp</a>
-                                <a class="nav-link" href="{{ route('admin.konten.aplikasi') }}">Aplikasi BCamp</a>
+                                <a class="nav-link" href="{{ route('admin.konten.website') }}">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-globe"></i></div>
+                                    Website BCamp
+                                </a>
+                                <a class="nav-link" href="{{ route('admin.konten.aplikasi') }}">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    Aplikasi BCamp
+                                </a>
                             </nav>
                         </div>
+
                         <div class="sb-sidenav-menu-heading">Transaksi</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTransaction" aria-expanded="false"
-                            aria-controls="collapseTransaction">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            data-bs-target="#collapseTransaction" aria-expanded="false" aria-controls="collapseTransaction">
+                            <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
                             Pesanan
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseTransaction" aria-labelledby="headingTwo"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Permintaan Pesanan</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Riwayat Pesanan</a>
+                                <a class="nav-link" href="{{ route('admin.pesanan.main') }}">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-clock"></i></div>
+                                    Permintaan Pesanan
+                                </a>
+                                <a class="nav-link" href="{{ route('admin.pesanan.history') }}">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-history"></i></div>
+                                    Riwayat Pesanan
+                                </a>
                             </nav>
                         </div>
                     </div>
