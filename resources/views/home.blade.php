@@ -84,22 +84,6 @@
                 </div>
             </div>
         </div>
-    </nav>
-    <section class="galeri-section py-5 position-relative" style="background-color: white; z-index: 2;" id="galeri">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Teks -->
-                <div class="col-lg-6 text-center text-lg-start mb-3 mb-lg-0 d-flex flex-column justify-content-center"
-                    style="margin-top: -50px;">
-                    <p class="text-uppercase fw-bold mb-2" style="color: #AE9518; font-size: 1.1rem; margin-top: 30px;">
-                        KENANGAN BERSAMA B-CAMP MU!
-                    </p>
-                    <h2 class="fw-bold mb-3" style="font-size: 3.3rem; line-height: 1.2;">
-                        <span style="color: #AE9518;">Galeri</span> <span style="color: #000;">B-Camp</span>
-                    </h2>
-                    <div class="d-flex justify-content-center justify-content-lg-start">
-                        <button class="btn-gold">Lihat Lebih Banyak -></button>
-                    </div>
 
                 </div>
                 <!-- Gambar -->
