@@ -10906,7 +10906,7 @@ p {
 #mainNav .navbar-nav {
   margin: 0 auto 0 15%; /* Menambahkan margin auto untuk centering */
   display: flex;
-  justify-content: flex-start; /* Mengatur konten nav ke tengah */
+  justify-content: center; /* Mengatur konten nav ke tengah */
   width: 75%; /* Memastikan nav mengambil lebar penuh */
 }
 #mainNav .navbar-nav .nav-item .nav-link {

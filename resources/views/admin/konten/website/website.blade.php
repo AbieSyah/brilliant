@@ -114,10 +114,10 @@
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card text-white h-100 shadow" style="background-color: #148BD499">
                                 <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Beranda</h4>
+                                    <h4 class="card-title mb-0">Kelola Beranda</h4>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.beranda') }}">Edit Beranda Content</a>
+                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.beranda') }}">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -127,10 +127,10 @@
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card text-white h-100 shadow" style="background-color: #08791999">
                                 <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Galeri</h4>
+                                    <h4 class="card-title mb-0">Kelola Konten Galeri</h4>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.galeri') }}">Edit Galeri Content</a>
+                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.galeri') }}">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -140,10 +140,10 @@
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card text-white h-100 shadow" style="background-color: #FCB40499">
                                 <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Fasilitas</h4>
+                                    <h4 class="card-title mb-0">Kelola Konten Fasilitas</h4>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.fasilitas') }}">Edit Fasilitas Content</a>
+                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.fasilitas') }}">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -156,10 +156,10 @@
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card text-white h-100 shadow" style="background-color: #A3D9D9">
                                 <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Booking</h4>
+                                    <h4 class="card-title mb-0">Kelola Booking</h4>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.booking') }}">Edit Booking Content</a>
+                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.booking') }}">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -169,10 +169,10 @@
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card text-white h-100 shadow" style="background-color: #7B9669">
                                 <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Manage Footer</h4>
+                                    <h4 class="card-title mb-0">Kelola Footer</h4>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.footer') }}">Edit Footer Content</a>
+                                    <a class="small text-white stretched-link" href="{{ route('admin.konten.footer') }}">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
