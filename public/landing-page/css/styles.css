@@ -366,3 +366,133 @@
     margin-top: 40px;
   }
 }
+
+/* Container styling */
+.fasilitas-section {
+  margin-top: 100px;
+  padding: 40px 0;
+}
+
+/* Cards container */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+/* Card styling */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 400px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.20);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.card:hover .image-container img {
+  transform: scale(1.1);
+}
+
+/* Detail Button */
+.detail-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 20px;
+}
+
+.image-container:hover .detail-button {
+  opacity: 1;
+}
+
+/* Popup Styling */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  animation: fadeIn 0.4s;
+}
+
+.popup-content {
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  width: 400px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* Animasi popup */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.card-logo {
+  width: 50px;
+  height: 50px;
+  margin: 10px auto 0;
+  display: block;
+}
+

@@ -127,13 +127,54 @@
     </section>
     <section class="fasilitas-section" id="fasilitas">
         <div class="container text-center">
-            <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 800; color: #4E6C50; margin-top: -350px;">
-                Fasilitas
-            </h2>
-            <p
-                style="font-family: 'Montserrat', sans-serif; font-weight: 500; color: #000000; font-size: 1.1rem; margin-top: -300;">
-                Jelajahi Asrama dan Fasilitas lainnya di B-Camp!
-            </p>
+            <div style="text-align: center;">
+                <h2
+                    style="font-family: 'Montserrat', sans-serif; font-weight: 800; color: #4E6C50; font-size: 2.5rem; margin-bottom: 10px;">
+                    Fasilitas
+                </h2>
+                <p
+                    style="font-family: 'Montserrat', sans-serif; font-weight: 500; color: #000000; font-size: 1.1rem; margin: 0;">
+                    Jelajahi Asrama dan Fasilitas lainnya di B-Camp!
+                </p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C2.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Reguler</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/F1.png') }}" alt="Reguler">
+                        <button class="detail-button" onclick="openPopup('Reguler')">Detail</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C1.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>VIP</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/F1.png') }}" alt="VIP">
+                        <button class="detail-button" onclick="openPopup('VIP')">Detail</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C3.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Homestay</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/F1.png') }}" alt="Homestay">
+                        <button class="detail-button" onclick="openPopup('Homestay')">Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popup -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h2 id="popup-title"></h2>
+                <p>Isi detail tentang camp akan ditampilkan di sini.</p>
+            </div>
         </div>
     </section>
     <section class="booking-section" id="booking">
@@ -163,6 +204,7 @@
             </h2>
         </div>
     </section>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -185,6 +227,16 @@
         }
     });
 </script>
+<script>
+    function openPopup(campName) {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('popup-title').innerText = campName;
+    }
 
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+</script>
 
 </html>
