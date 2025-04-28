@@ -6,6 +6,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DatatableController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\WebsiteBerandaController;
+use App\Http\Controllers\WebsiteGaleriController;
+use App\Http\Controllers\WebsiteFasilitasController;
+use App\Http\Controllers\WebsiteBookingController;
+use App\Http\Controllers\WebsiteFooterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,19 +42,41 @@ Route::middleware(['auth'])->group(function () {
     // Dashboard route
     Route::get('/adminn', function () {
         return view('admin.index');
-    })->name('admin.dashboard'); // This is the main dashboard route
+    })->name('admin.dashboard');
 
-    // Website Content Management Routes
     Route::prefix('admin/konten')->name('admin.konten.')->group(function () {
-        // Website routes
+        // Website routes with all data
         Route::get('/website', function () {
-            return view('admin.konten.website.website');
+            $beranda = \App\Models\WebsiteBeranda::first();
+            $galeri = \App\Models\WebsiteGaleri::first();
+            $fasilitas = \App\Models\WebsiteFasilitas::first();
+            $booking = \App\Models\WebsiteBooking::first();
+            $footer = \App\Models\WebsiteFooter::first();
+
+            return view('admin.konten.website.website', compact(
+                'beranda',
+                'galeri',
+                'fasilitas',
+                'booking',
+                'footer'
+            ));
         })->name('website');
+        // CRUD route for Beranda
+        Route::post('/website/beranda/update', [WebsiteBerandaController::class, 'update'])
+            ->name('website.beranda.update');
+        Route::post('/website/galeri/update', [WebsiteGaleriController::class, 'update'])
+            ->name('website.galeri.update');
 
-        Route::get('/beranda', function () {
-            return view('admin.konten.website.beranda');
-        })->name('beranda');
+        Route::post('/website/fasilitas/update', [WebsiteFasilitasController::class, 'update'])
+            ->name('website.fasilitas.update');
 
+        Route::post('/website/booking/update', [WebsiteBookingController::class, 'update'])
+            ->name('website.booking.update');
+
+        Route::post('/website/footer/update', [WebsiteFooterController::class, 'update'])
+            ->name('website.footer.update');
+
+        // Existing website content routes
         Route::get('/galeri', function () {
             return view('admin.konten.website.galeri');
         })->name('galeri');
