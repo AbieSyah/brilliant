@@ -202,6 +202,166 @@
                 <span style="color: #AE9518;">Gimana sih B-Camp</span><span style="color: #000000;"> menurut
                     mereka?</span>
             </h2>
+            <div class="container my-5">
+                <h3 class="text-center mb-4" style="font-size: 18px; margin-bottom: 100px;">Kamu bisa lihat pengalaman para pengguna B-Camp
+                    sebelumnya disini!</h3>
+                <div class="carousel-container" style="margin-bottom: -400px;">
+                    <button class="arrow-btn left" id="leftArrow" onclick="scrollCarousel(-300)">‹</button>
+                    <div class="comment-carousel" id="commentCarousel">
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Aisyah Salsabila</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Tempatnya nyaman banget, tutornya juga asik dan sabar ngajarinnya.
+                                    Aku jadi lebih percaya diri buat speaking. Recommended buat yang mau belajar bahasa
+                                    Inggris!</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/3.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Rizky Pratama</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Keren banget! Sistem belajarnya full English, jadi bener-bener
+                                    dipaksa buat ngomong. Camp-nya juga bersih dan nyaman, pokoknya top deh!</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Dewi Lestari</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Pengalaman belajar di sini seru banget! Tutornya ramah, metode
+                                    belajarnya juga gampang dipahami. Aku yang tadinya takut ngomong Inggris, sekarang
+                                    udah lumayan lancar.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/3.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Budi Santoso</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Belajar di sini sangat membantu! Tutornya profesional dan suasana
+                                    belajarnya menyenangkan. Aku jadi lebih paham grammar dan vocab.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Siti Aminah</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Aku suka banget belajar di sini! Lingkungannya mendukung buat
+                                    belajar bahasa Inggris. Tutornya juga sabar dan metode belajarnya efektif.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Ahmad Fauzi</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Pengalaman belajar yang luar biasa! Aku bisa ningkatin speaking
+                                    skill dalam waktu singkat. Tempatnya juga nyaman dan bersih.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Lina Marlina</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Tutornya ramah dan metode belajarnya sangat membantu. Aku jadi
+                                    lebih percaya diri berbicara dalam bahasa Inggris. Recommended!</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Fajar Nugroho</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Belajar di sini seru banget! Sistemnya full English, jadi terbiasa
+                                    ngomong tiap hari. Camp-nya juga nyaman dan bersih.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Rina Susanti</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Aku sangat puas belajar di sini! Tutornya sabar dan metode
+                                    belajarnya mudah dipahami. Aku jadi lebih lancar speaking.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Eko Prasetyo</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Pengalaman belajar yang tak terlupakan! Tutornya profesional,
+                                    lingkungannya nyaman, dan metode belajarnya sangat efektif.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow-btn right" id="rightArrow" onclick="scrollCarousel(300)">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="add-feedback text-center my-5" style="margin-bottom: auto">
+            <img src="{{ asset('/landing-page/assets/img/logos/pesan.png') }}" alt="Tambah Pesan Icon"
+                class="feedback-icon">
+            <span class="feedback-text">Tambah kesan & pesan-mu tentang B-Camp</span>
+            <a href="#formKesanPesan" class="feedback-btn">+ Tambahkan pesan</a>
         </div>
     </section>
 
@@ -237,6 +397,94 @@
         document.getElementById('popup').style.display = 'none';
     }
 
+</script>
+<script>
+    const carousel = document.getElementById('commentCarousel');
+    const leftArrow = document.getElementById('leftArrow');
+    const rightArrow = document.getElementById('rightArrow');
+    const cards = document.querySelectorAll('.comment-card');
+
+    function scrollCarousel(distance) {
+        carousel.scrollBy({ left: distance, behavior: 'smooth' });
+    }
+
+    function updateArrows() {
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        const scrollPosition = carousel.scrollLeft;
+
+        // Tampilkan tombol kiri jika sudah discroll ke kanan
+        if (scrollPosition > 0) {
+            leftArrow.classList.add('visible');
+        } else {
+            leftArrow.classList.remove('visible');
+        }
+
+        // Tampilkan tombol kanan jika masih ada konten yang bisa discroll
+        if (scrollPosition < maxScroll - 1) {
+            rightArrow.classList.add('visible');
+        } else {
+            rightArrow.classList.remove('visible');
+        }
+    }
+
+    function updateCenterCard() {
+        const carouselRect = carousel.getBoundingClientRect();
+        const carouselCenter = carouselRect.left + (carouselRect.width / 2);
+
+        cards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + (cardRect.width / 2);
+
+            if (Math.abs(cardCenter - carouselCenter) < cardRect.width / 2) {
+                card.classList.add('center');
+            } else {
+                card.classList.remove('center');
+            }
+        });
+    }
+
+    function scrollToCenter() {
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        carousel.scrollTo({ left: maxScroll / 2, behavior: 'smooth' });
+    }
+
+    carousel.addEventListener('scroll', () => {
+        updateCenterCard();
+        updateArrows();
+    });
+    window.addEventListener('resize', () => {
+        updateCenterCard();
+        updateArrows();
+    });
+
+    // Scroll ke tengah saat halaman dimuat
+    window.addEventListener('load', () => {
+        scrollToCenter();
+        updateCenterCard();
+        updateArrows();
+    });
+
+    // Initial check
+    updateCenterCard();
+    updateArrows();
+</script>
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scroll ke bawah -> sembunyikan navbar
+            navbar.style.top = "-100px"; // sembunyikan di atas
+        } else {
+            // Scroll ke atas -> tampilkan navbar
+            navbar.style.top = "0";
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // untuk iOS
+    });
 </script>
 
 </html>

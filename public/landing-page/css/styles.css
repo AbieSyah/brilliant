@@ -5,6 +5,7 @@
   padding: 1rem 2rem;
   z-index: 1000;
   margin-right: 30rem;
+  transition: top 0.3s;
 }
 
 .navbar-brand span {
@@ -495,4 +496,131 @@
   margin: 10px auto 0;
   display: block;
 }
+.comment-carousel {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
 
+.comment-card {
+  display: inline-block;
+  width: 300px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  scroll-snap-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.comment-card:hover {
+  transform: scale(1.05);
+}
+
+.comment-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.comment-carousel::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.comment-carousel::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Efek zoom untuk card di tengah */
+.comment-card.center {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+/* Styling untuk tombol panah */
+.carousel-container {
+  position: relative;
+  padding: 0 50px; /* Tambahkan padding untuk memberi ruang bagi tombol */
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10; /* Pastikan tombol di atas elemen lain */
+}
+
+.arrow-btn.left {
+  left: 0; /* Posisi di luar area scrollable */
+}
+
+.arrow-btn.right {
+  right: 0; /* Posisi di luar area scrollable */
+}
+
+.arrow-btn.visible {
+  display: flex;
+}
+
+.arrow-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.card-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.add-feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.add-feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.feedback-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.feedback-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.feedback-btn {
+    background-color: #E6DCA5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.feedback-btn:hover {
+    background-color: #d8ce8b;
+}
