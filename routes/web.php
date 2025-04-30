@@ -11,17 +11,10 @@ use App\Http\Controllers\WebsiteGaleriController;
 use App\Http\Controllers\WebsiteFasilitasController;
 use App\Http\Controllers\WebsiteBookingController;
 use App\Http\Controllers\WebsiteFooterController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\AplikasiController; // Points to controller_api folder
+use App\Models\AplikasiBeranda;
+use App\Models\AplikasiEvent;
+use App\Models\AplikasiFasilitas;
 
 Route::get('/', function () {
     return view('home');
@@ -93,34 +86,26 @@ Route::middleware(['auth'])->group(function () {
             return view('admin.konten.website.footer');
         })->name('footer');
 
-        // Aplikasi routes
+        // Aplikasi routes with data
         Route::get('/aplikasi', function () {
-            return view('admin.konten.aplikasi.aplikasi');
+            $beranda = \App\Models\AplikasiBeranda::first();
+            $event = \App\Models\AplikasiEvent::first();
+            $fasilitas = \App\Models\AplikasiFasilitas::first();
+            
+            return view('admin.konten.aplikasi.aplikasi', compact(
+                'beranda',
+                'event',
+                'fasilitas'
+            ));
         })->name('aplikasi');
 
-        Route::get('/aplikasi/beranda', function () {
-            return view('admin.konten.aplikasi.beranda');
-        })->name('beranda.aplikasi');
-
-        Route::get('/aplikasi/galeri', function () {
-            return view('admin.konten.aplikasi.galeri');
-        })->name('galeri.aplikasi');
-
-        Route::get('/aplikasi/fasilitas', function () {
-            return view('admin.konten.aplikasi.fasilitas');
-        })->name('fasilitas.aplikasi');
-
-        Route::get('/aplikasi/booking', function () {
-            return view('admin.konten.aplikasi.booking');
-        })->name('booking.aplikasi');
-
-        Route::get('/aplikasi/footer', function () {
-            return view('admin.konten.aplikasi.footer');
-        })->name('footer.aplikasi');
-
-        Route::get('/aplikasi/kamar', function () {
-            return view('admin.konten.aplikasi.kamar');
-        })->name('kamar.aplikasi');
+        // CRUD routes for Aplikasi content
+        Route::post('/aplikasi/beranda/update', [AplikasiController::class, 'updateBeranda'])
+            ->name('aplikasi.beranda.update');
+        Route::post('/aplikasi/event/update', [AplikasiController::class, 'updateEvent'])
+            ->name('aplikasi.event.update');
+        Route::post('/aplikasi/fasilitas/update', [AplikasiController::class, 'updateFasilitas'])
+            ->name('aplikasi.fasilitas.update');
     });
 
     // Tables route
@@ -146,7 +131,6 @@ Route::get('password/reset', [App\Http\Controllers\ResetPasswordController::clas
 Route::post('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'update'])->name('password.update');
 
 Route::resource('datatable', DatatableController::class);
-
 
 
 
