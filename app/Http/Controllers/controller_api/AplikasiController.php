@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\AplikasiBeranda;
-use App\Models\AplikasiKamar;
+use App\Models\AplikasiEvent;
 use App\Models\AplikasiFasilitas;
 use Illuminate\Http\Request;
 
