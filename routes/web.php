@@ -12,6 +12,7 @@ use App\Http\Controllers\WebsiteFasilitasController;
 use App\Http\Controllers\WebsiteBookingController;
 use App\Http\Controllers\WebsiteFooterController;
 use App\Http\Controllers\AplikasiController; // Points to controller_api folder
+use App\Http\Controllers\UserAplikasiController;
 use App\Models\AplikasiBeranda;
 use App\Models\AplikasiEvent;
 use App\Models\AplikasiFasilitas;
@@ -131,6 +132,15 @@ Route::get('password/reset', [App\Http\Controllers\ResetPasswordController::clas
 Route::post('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'update'])->name('password.update');
 
 Route::resource('datatable', DatatableController::class);
+
+Route::post('/register', [UserAplikasiController::class, 'register']);
+Route::post('/login', [UserAplikasiController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/profile', [UserAplikasiController::class, 'getProfile']);
+    Route::post('/profile/update', [UserAplikasiController::class, 'updateProfile']);
+    Route::post('/logout', [UserAplikasiController::class, 'logout']);
+});
 
 
 
