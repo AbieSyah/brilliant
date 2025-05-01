@@ -109,11 +109,6 @@ Route::middleware(['auth'])->group(function () {
             ->name('aplikasi.fasilitas.update');
     });
 
-    // Tables route
-    Route::get('/adminn/tables', function () {
-        $datatable = \App\Models\Datatable::all();
-        return view('admin.tables', compact('datatable'));
-    })->name('dashboard.tables');
 
     // If you need the datatable functionality, move it to a different route
     Route::get('/adminn/data', [DatatableController::class, 'index'])->name('datatable.index');
@@ -133,13 +128,13 @@ Route::post('password/reset', [App\Http\Controllers\ResetPasswordController::cla
 
 Route::resource('datatable', DatatableController::class);
 
-Route::post('/register', [UserAplikasiController::class, 'register']);
-Route::post('/login', [UserAplikasiController::class, 'login']);
+Route::post('/register', [LoginController::class, 'register']);
+Route::post('/login', [LoginController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/profile', [UserAplikasiController::class, 'getProfile']);
-    Route::post('/profile/update', [UserAplikasiController::class, 'updateProfile']);
-    Route::post('/logout', [UserAplikasiController::class, 'logout']);
+    Route::get('/profile', [LoginController::class, 'getProfile']);
+    Route::post('/profile/update', [LoginController::class, 'updateProfile']);
+    Route::post('/logout', [LoginController::class, 'logout']);
 });
 
 
