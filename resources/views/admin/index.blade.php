@@ -101,10 +101,6 @@
                                 </a>
                             </nav>
                         </div>
-                        <a class="nav-link" href="{{ route('dashboard.tables') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Testing
-                        </a>
                     </div>
                 </div>
             </nav>
