@@ -17,19 +17,21 @@ use App\Http\Controllers\Api\UserAplikasiController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1')->group(function () {
+    // Auth routes
+    Route::post('/register', [UserAplikasiController::class, 'register']);
+    Route::post('/login', [UserAplikasiController::class, 'login']);
+    
+    // Protected routes
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::get('/user', [UserAplikasiController::class, 'getProfile']);
+        Route::post('/logout', [UserAplikasiController::class, 'logout']);
+        Route::post('/user/update', [UserAplikasiController::class, 'updateProfile']);
+    });
 });
+
 Route::prefix('aplikasi')->group(function () {
     Route::get('/beranda', [AplikasiController::class, 'getBeranda']);
     Route::get('/event', [AplikasiController::class, 'getEvent']);
     Route::get('/fasilitas', [AplikasiController::class, 'getFasilitas']);
-});
-Route::post('/register', [UserAplikasiController::class, 'register']);
-Route::post('/login', [UserAplikasiController::class, 'login']);
-
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/profile', [UserAplikasiController::class, 'getProfile']);
-    Route::post('/profile/update', [UserAplikasiController::class, 'updateProfile']);
-    Route::post('/logout', [UserAplikasiController::class, 'logout']);
 });

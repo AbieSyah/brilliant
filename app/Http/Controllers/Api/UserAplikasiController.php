@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\UserAplikasi;
+use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -11,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class UserAplikasiController extends Controller
 {
+    use ApiResponse;
+
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -22,7 +25,7 @@ class UserAplikasiController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return $this->error($validator->errors(), 422);
         }
 
         $user = UserAplikasi::create([
@@ -35,11 +38,10 @@ class UserAplikasiController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        return response()->json([
-            'message' => 'Registration successful',
+        return $this->success([
             'user' => $user,
             'token' => $token
-        ], 201);
+        ], 'Registration successful', 201);
     }
 
     public function login(Request $request)
@@ -50,23 +52,20 @@ class UserAplikasiController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
+            return $this->error($validator->errors(), 422);
         }
 
         if (!Auth::attempt($request->only('email', 'password'))) {
-            return response()->json([
-                'message' => 'Invalid login credentials'
-            ], 401);
+            return $this->error('Invalid credentials', 401);
         }
 
-        $user = UserAplikasi::where('email', $request->email)->firstOrFail();
+        $user = UserAplikasi::where('email', $request->email)->first();
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        return response()->json([
-            'message' => 'Login successful',
+        return $this->success([
             'user' => $user,
             'token' => $token
-        ]);
+        ], 'Login successful');
     }
 
     public function updateProfile(Request $request)
@@ -100,16 +99,11 @@ class UserAplikasiController extends Controller
     public function logout()
     {
         auth()->user()->tokens()->delete();
-
-        return response()->json([
-            'message' => 'Successfully logged out'
-        ]);
+        return $this->success(null, 'Successfully logged out');
     }
 
     public function getProfile()
     {
-        return response()->json([
-            'user' => auth()->user()
-        ]);
+        return $this->success(['user' => auth()->user()]);
     }
 }
