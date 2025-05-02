@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AplikasiController;
-
+use App\Http\Controllers\Api\UserAplikasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +16,17 @@ use App\Http\Controllers\Api\AplikasiController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Remove v1 prefix temporarily for testing
+Route::post('register', [UserAplikasiController::class, 'register']);
+Route::post('login', [UserAplikasiController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('profile', [UserAplikasiController::class, 'getProfile']);
+    Route::post('logout', [UserAplikasiController::class, 'logout']);
+    Route::put('profile/update', [UserAplikasiController::class, 'updateProfile']);
 });
+
+// Application routes
 Route::prefix('aplikasi')->group(function () {
     Route::get('/beranda', [AplikasiController::class, 'getBeranda']);
     Route::get('/event', [AplikasiController::class, 'getEvent']);

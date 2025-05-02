@@ -36,7 +36,6 @@
                     <span class="text-light ms-2">Admin BCamp</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Pengaturan</a></li>
                     <li><a class="dropdown-item" href="#!">Log Aktivitas</a></li>
                     <li>
                         <hr class="dropdown-divider" />
@@ -101,10 +100,6 @@
                                 </a>
                             </nav>
                         </div>
-                        <a class="nav-link" href="{{ route('dashboard.tables') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Testing
-                        </a>
                     </div>
                 </div>
             </nav>
