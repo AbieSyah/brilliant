@@ -24,7 +24,7 @@
                     <span class="highlight">Booking Camp <br>Pilihan Kamu Di</span><br> <span
                         class="camp-name">Brilliant Camp</span>
                 </h1>
-                <button class="hero-button">Selengkapnya</button>
+                <button class="hero-button" onclick="window.location.href='#booking'">Selengkapnya</button>
                 <p class="hero-subtext">By Brilliant English Course</p>
             </div>
         </div>
@@ -98,7 +98,8 @@
                         <span style="color: #AE9518;">Galeri</span> <span style="color: #000;">B-Camp</span>
                     </h2>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        <button class="btn-gold">Lihat Lebih Banyak -></button>
+                        <button class="btn-gold" onclick="window.location.href='{{ route('galeri') }}'">Lihat Lebih
+                            Banyak -></button>
                     </div>
 
                 </div>
@@ -108,8 +109,9 @@
                         <!-- Gambar besar -->
                         <div class="rounded-4 overflow-hidden"
                             style="width: 330px; height: 525px; margin-left: -30px; margin-top: 50px;">
-                            <iframe src="https://www.youtube.com/embed/zSSrQvpY9ow?rel=0&autoplay=0&showinfo=0"
-                                title="YouTube video" width="100%" height="100%" style="border:0;" allowfullscreen
+                            <iframe src="https://www.youtube.com/embed/H0TOfgpNJO4?rel=0&autoplay=0&modestbranding=1"
+                                title="YouTube Shorts Video" width="100%" height="100%" style="border:0;"
+                                allowfullscreen
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
                             </iframe>
                         </div>
@@ -203,7 +205,8 @@
                     mereka?</span>
             </h2>
             <div class="container my-5">
-                <h3 class="text-center mb-4" style="font-size: 18px; margin-bottom: 100px;">Kamu bisa lihat pengalaman para pengguna B-Camp
+                <h3 class="text-center mb-4" style="font-size: 18px; margin-bottom: 100px;">Kamu bisa lihat pengalaman
+                    para pengguna B-Camp
                     sebelumnya disini!</h3>
                 <div class="carousel-container" style="margin-bottom: -400px;">
                     <button class="arrow-btn left" id="leftArrow" onclick="scrollCarousel(-300)">‹</button>
