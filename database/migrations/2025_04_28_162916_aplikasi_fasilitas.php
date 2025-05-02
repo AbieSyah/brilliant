@@ -8,19 +8,19 @@ class AplikasiFasilitas extends Migration
 {
     public function up()
     {
-        Schema::create('aplikasi_fasilitas', function (Blueprint $table) {
+        Schema::create('kamar', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_fasilitas');
+            $table->string('nama_kamar');
             $table->text('deskripsi')->nullable();
-            $table->string('icon')->nullable();
+            $table->enum('gender', ['pria', 'wanita', 'campur'])->default('campur');
             $table->string('gambar')->nullable();
-            $table->boolean('status')->default(true);
+            $table->decimal('harga', 10, 2);
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('aplikasi_fasilitas');
+        Schema::dropIfExists('kamar');
     }
 }

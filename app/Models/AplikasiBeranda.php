@@ -9,9 +9,7 @@ class AplikasiBeranda extends Model
     protected $table = 'aplikasi_beranda';
     
     protected $fillable = [
-        'title',
         'description',
-        'image',
-        'button_text'
+        'image'
     ];
 }
