@@ -95,11 +95,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/aplikasi', function () {
             $beranda = \App\Models\AplikasiBeranda::first();
             $event = \App\Models\AplikasiEvent::first();
-            $fasilitas = \App\Models\AplikasiFasilitas::first();
+            $fasilitas = \App\Models\AplikasiFasilitas::all(); // Change first() to all()
+            $events = \App\Models\AplikasiEvent::all(); // Add this line
             
             return view('admin.konten.aplikasi.aplikasi', compact(
                 'beranda',
                 'event',
+                'events', // Add this
                 'fasilitas'
             ));
         })->name('aplikasi');
@@ -113,9 +115,21 @@ Route::middleware(['auth'])->group(function () {
             ->name('aplikasi.fasilitas.update');
     });
 
-
-    // If you need the datatable functionality, move it to a different route
-    Route::get('/adminn/data', [DatatableController::class, 'index'])->name('datatable.index');
+    Route::prefix('admin/konten/aplikasi')->group(function () {
+        Route::get('/', [AplikasiController::class, 'index'])->name('admin.konten.aplikasi');
+        
+        // Event routes
+        Route::post('/event', [AplikasiController::class, 'eventStore'])->name('admin.konten.aplikasi.event.store');
+        Route::get('/event/{id}/edit', [AplikasiController::class, 'eventEdit'])->name('admin.konten.aplikasi.event.edit');
+        Route::put('/event/{id}', [AplikasiController::class, 'eventUpdate'])->name('admin.konten.aplikasi.event.update');
+        Route::delete('/event/{id}', [AplikasiController::class, 'eventDestroy'])->name('admin.konten.aplikasi.event.delete');
+        
+        // Fasilitas routes
+        Route::post('/fasilitas', [AplikasiController::class, 'fasilitasStore'])->name('admin.konten.aplikasi.fasilitas.store');
+        Route::get('/fasilitas/{id}/edit', [AplikasiController::class, 'fasilitasEdit'])->name('admin.konten.aplikasi.fasilitas.edit');
+        Route::put('/fasilitas/{id}', [AplikasiController::class, 'fasilitasUpdate'])->name('admin.konten.aplikasi.fasilitas.update');
+        Route::delete('/fasilitas/{id}', [AplikasiController::class, 'fasilitasDestroy'])->name('admin.konten.aplikasi.fasilitas.destroy');
+    });
 
     // Pesanan routes
     Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('admin.pesanan.main');
@@ -129,8 +143,6 @@ Route::post('/register', [RegisterController::class, 'store'])
 
 Route::get('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])->name('password.request');
 Route::post('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'update'])->name('password.update');
-
-Route::resource('datatable', DatatableController::class);
 
 Route::post('/register', [LoginController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);

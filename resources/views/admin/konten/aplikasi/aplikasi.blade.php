@@ -146,8 +146,8 @@
                                     <h4 class="card-title mb-0">Kelola Event</h4>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#eventModal">
-                                        Edit Konten
+                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#eventListModal">
+                                        Lihat Data
                                     </a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -158,11 +158,11 @@
                         <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card text-white h-100 shadow" style="background-color: #DC580599">
                                 <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Fasilitas</h4>
+                                    <h4 class="card-title mb-0">Kelola Kamar</h4>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#fasilitasModal">
-                                        Edit Konten
+                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#kamarListModal">
+                                        Lihat Data
                                     </a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -196,16 +196,8 @@
                     <form action="{{ route('admin.konten.aplikasi.beranda.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">Judul</label>
-                            <input type="text" class="form-control" name="title" value="{{ $beranda->title ?? '' }}">
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label">Deskripsi</label>
                             <textarea class="form-control" name="description" rows="3">{{ $beranda->description ?? '' }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Button Text</label>
-                            <input type="text" class="form-control" name="button_text" value="{{ $beranda->button_text ?? '' }}">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Gambar (Max 20MB)</label>
@@ -235,45 +227,44 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('admin.konten.aplikasi.event.update') }}" method="POST" enctype="multipart/form-data">
+                    <!-- Update the form tag -->
+                    <form id="eventForm" method="POST" enctype="multipart/form-data" action="{{ route('admin.konten.aplikasi.event.store') }}">
                         @csrf
+                        <input type="hidden" name="_method" id="eventMethod" value="POST">
+                        <input type="hidden" name="event_id" id="event_id" value="">
                         <div class="mb-3">
                             <label class="form-label">Nama Event</label>
-                            <input type="text" class="form-control" name="nama_event" value="{{ $event->nama_event ?? '' }}">
+                            <input type="text" class="form-control" name="nama_event" id="edit_nama_event">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" rows="3">{{ $event->deskripsi ?? '' }}</textarea>
+                            <textarea class="form-control" name="deskripsi" id="edit_deskripsi" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Tanggal Mulai</label>
-                            <input type="datetime-local" class="form-control" name="tanggal_mulai" value="{{ $event->tanggal_mulai ?? '' }}">
+                            <input type="datetime-local" class="form-control" name="tanggal_mulai" id="edit_tanggal_mulai">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Tanggal Selesai</label>
-                            <input type="datetime-local" class="form-control" name="tanggal_selesai" value="{{ $event->tanggal_selesai ?? '' }}">
+                            <input type="datetime-local" class="form-control" name="tanggal_selesai" id="edit_tanggal_selesai">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Lokasi</label>
-                            <input type="text" class="form-control" name="lokasi" value="{{ $event->lokasi ?? '' }}">
+                            <input type="text" class="form-control" name="lokasi" id="edit_lokasi">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Status</label>
-                            <select class="form-control" name="status">
-                                <option value="upcoming" {{ ($event->status ?? '') == 'upcoming' ? 'selected' : '' }}>Upcoming</option>
-                                <option value="ongoing" {{ ($event->status ?? '') == 'ongoing' ? 'selected' : '' }}>Ongoing</option>
-                                <option value="completed" {{ ($event->status ?? '') == 'completed' ? 'selected' : '' }}>Completed</option>
-                                <option value="cancelled" {{ ($event->status ?? '') == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
+                            <select class="form-control" name="status" id="edit_status">
+                                <option value="upcoming">Upcoming</option>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Gambar Event (Max 20MB)</label>
                             <input type="file" class="form-control" name="gambar" accept="image/*" onchange="previewImage(this, 'eventPreview')">
-                            @if(isset($event->gambar))
-                                <img id="eventPreview" src="{{ asset('storage/' . $event->gambar) }}" class="preview-image">
-                            @else
-                                <img id="eventPreview" class="preview-image" style="display: none;">
-                            @endif
+                            <img id="eventPreview" src="" class="preview-image" style="display: none;">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -290,32 +281,39 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Kelola Fasilitas</h5>
+                    <h5 class="modal-title">Kelola Kamar</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('admin.konten.aplikasi.fasilitas.update') }}" method="POST" enctype="multipart/form-data">
+                    <form id="fasilitasForm" method="POST" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="_method" id="fasilitasMethod" value="POST">
+                        <input type="hidden" name="fasilitas_id" id="fasilitas_id" value="">
+                        
                         <div class="mb-3">
-                            <label class="form-label">Nama Fasilitas</label>
-                            <input type="text" class="form-control" name="nama_fasilitas" value="{{ $fasilitas->nama_fasilitas ?? '' }}">
+                            <label class="form-label">Nama Kamar</label>
+                            <input type="text" class="form-control" name="nama_kamar" id="edit_nama_kamar" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" rows="3">{{ $fasilitas->deskripsi ?? '' }}</textarea>
+                            <textarea class="form-control" name="deskripsi" id="edit_deskripsi" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Icon</label>
-                            <input type="text" class="form-control" name="icon" value="{{ $fasilitas->icon ?? '' }}" placeholder="Contoh: fas fa-wifi">
+                            <label class="form-label">Gender</label>
+                            <select class="form-control" name="gender" id="edit_gender" required>
+                                <option value="pria">Pria</option>
+                                <option value="wanita">Wanita</option>
+                                <option value="campur">Campur</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Harga</label>
+                            <input type="number" class="form-control" name="harga" id="edit_harga" min="0" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Gambar (Max 20MB)</label>
                             <input type="file" class="form-control" name="gambar" accept="image/*" onchange="previewImage(this, 'fasilitasPreview')">
-                            @if(isset($fasilitas->gambar))
-                                <img id="fasilitasPreview" src="{{ asset('storage/' . $fasilitas->gambar) }}" class="preview-image">
-                            @else
-                                <img id="fasilitasPreview" class="preview-image" style="display: none;">
-                            @endif
+                            <img id="fasilitasPreview" src="" class="preview-image" style="display: none;">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -327,17 +325,118 @@
         </div>
     </div>
 
-    <!-- Scripts - Same as website.blade.php -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Event List Modal -->
+    <div class="modal fade" id="eventListModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Daftar Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventModal" onclick="createEvent()">
+                            <i class="fas fa-plus"></i> Tambah Event
+                        </button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Event</th>
+                                <th>Tanggal Mulai</th>
+                                <th>Tanggal Selesai</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($events as $index => $event)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $event->nama_event }}</td>
+                                <td>{{ $event->tanggal_mulai }}</td>
+                                <td>{{ $event->tanggal_selesai }}</td>
+                                <td>{{ ucfirst($event->status) }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-warning" onclick="editEventData({{ $event->id }})" data-id="{{ $event->id }}">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteEventData({{ $event->id }})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kamar List Modal -->
+    <div class="modal fade" id="kamarListModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Daftar Kamar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fasilitasModal" onclick="createKamar()">
+                            <i class="fas fa-plus"></i> Tambah Kamar
+                        </button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Kamar</th>
+                                <th>Deskripsi</th>
+                                <th>Gender</th>
+                                <th>Harga</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($fasilitas as $kamar)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $kamar->nama_kamar }}</td>
+                                <td>{{ \Illuminate\Support\Str::limit($kamar->deskripsi, 100) }}</td>
+                                <td>{{ ucfirst($kamar->gender) }}</td>
+                                <td>Rp {{ number_format($kamar->harga, 0, ',', '.') }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-warning" onclick="editKamarData({{ $kamar->id }})">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteKamarData({{ $kamar->id }})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Replace all script tags at the bottom of the file with this single unified script section -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('/admin/js/scripts.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('/admin/assets/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('/admin/assets/demo/chart-bar-demo.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-        crossorigin="anonymous"></script>
-    <script src="{{ asset('admin/js/datatables-simple-demo.js') }}"></script>
 
     <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
         function previewImage(input, previewId) {
             const preview = document.getElementById(previewId);
             preview.style.display = 'block';
@@ -351,13 +450,173 @@
             }
         }
 
+        function showAlert(message, type = 'success') {
+            alert(message); // You can replace this with a better alert library
+        }
+
+        function handleAjaxError(xhr) {
+            if (xhr.status === 422) {
+                const errors = xhr.responseJSON.errors;
+                let errorMessage = 'Terdapat beberapa kesalahan:\n';
+                Object.keys(errors).forEach(key => {
+                    errorMessage += `- ${errors[key][0]}\n`;
+                });
+                showAlert(errorMessage, 'error');
+            } else if (xhr.status === 404) {
+                showAlert('Data tidak ditemukan', 'error');
+            } else {
+                showAlert(xhr.responseJSON?.message || 'Terjadi kesalahan pada server', 'error');
+            }
+        }
+
+        // Event functions
+        function createEvent() {
+            $('#eventListModal').modal('hide');
+            $('#eventForm').attr('action', "{{ route('admin.konten.aplikasi.event.store') }}");
+            $('#eventMethod').val('POST');
+            $('#event_id').val('');
+            $('#eventForm')[0].reset();
+            $('#eventPreview').attr('src', '').hide();
+            setTimeout(() => {
+                $('#eventModal').modal('show');
+            }, 500);
+        }
+
+        function editEventData(id) {
+            $('#eventListModal').modal('hide');
+            $.get(`{{ url('admin/konten/aplikasi/event') }}/${id}/edit`, function(event) {
+                $('#eventForm').attr('action', `{{ url('admin/konten/aplikasi/event') }}/${id}`);
+                $('#eventMethod').val('PUT');
+                $('#event_id').val(id);
+                $('#edit_nama_event').val(event.nama_event);
+                $('#edit_deskripsi').val(event.deskripsi);
+                $('#edit_tanggal_mulai').val(event.tanggal_mulai);
+                $('#edit_tanggal_selesai').val(event.tanggal_selesai);
+                $('#edit_lokasi').val(event.lokasi);
+                $('#edit_status').val(event.status);
+                if (event.gambar) {
+                    $('#eventPreview').attr('src', '/storage/' + event.gambar).show();
+                }
+                setTimeout(() => {
+                    $('#eventModal').modal('show');
+                }, 500);
+            });
+        }
+
+        function deleteEventData(id) {
+            if(confirm('Apakah Anda yakin ingin menghapus event ini?')) {
+                $.ajax({
+                    url: `{{ url('admin/konten/aplikasi/event') }}/${id}`,
+                    type: 'DELETE',
+                    data: { "_token": "{{ csrf_token() }}" },
+                    success: function(response) {
+                        showAlert(response.message || 'Event berhasil dihapus');
+                        location.reload();
+                    },
+                    error: function(xhr) {
+                        handleAjaxError(xhr);
+                    }
+                });
+            }
+        }
+
+        // Initialize event handlers
+        $(document).ready(function() {
+            $('#eventForm').on('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                if ($('#eventMethod').val() === 'PUT') {
+                    formData.append('_method', 'PUT');
+                }
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        showAlert(response.message || 'Data berhasil disimpan');
+                        $('#eventModal').modal('hide');
+                        location.reload();
+                    },
+                    error: function(xhr) {
+                        handleAjaxError(xhr);
+                    }
+                });
+            });
+        });
+
         @if(session('success'))
-            alert('{{ session('success') }}');
+            showAlert('{{ session('success') }}');
         @endif
 
         @if(session('error'))
-            alert('{{ session('error') }}');
+            showAlert('{{ session('error') }}', 'error');
         @endif
+
+        // Kamar functions
+        function createKamar() {
+            $('#kamarListModal').modal('hide');
+            $('#fasilitasForm').attr('action', "{{ route('admin.konten.aplikasi.fasilitas.store') }}");
+            $('#fasilitasMethod').val('POST');
+            $('#fasilitas_id').val('');
+            $('#fasilitasForm')[0].reset();
+            $('#fasilitasPreview').attr('src', '').hide();
+            setTimeout(() => {
+                $('#fasilitasModal').modal('show');
+            }, 500);
+        }
+
+        function editKamarData(id) {
+            $('#kamarListModal').modal('hide');
+            $.get(`{{ url('admin/konten/aplikasi/fasilitas') }}/${id}/edit`, function(kamar) {
+                $('#fasilitasForm').attr('action', `{{ url('admin/konten/aplikasi/fasilitas') }}/${id}`);
+                $('#fasilitasMethod').val('PUT');
+                $('#fasilitas_id').val(id);
+                
+                // Make sure IDs match your form fields
+                $('#edit_nama_kamar').val(kamar.nama_kamar);
+                $('#edit_deskripsi').val(kamar.deskripsi); // Make sure this ID matches your textarea
+                $('#edit_gender').val(kamar.gender);
+                $('#edit_harga').val(kamar.harga);
+                
+                if (kamar.gambar) {
+                    $('#fasilitasPreview').attr('src', '/storage/' + kamar.gambar).show();
+                }
+                
+                setTimeout(() => {
+                    $('#fasilitasModal').modal('show');
+                }, 500);
+            });
+        }
+
+        // Initialize fasilitas form handling
+        $(document).ready(function() {
+            $('#fasilitasForm').on('submit', function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                if ($('#fasilitasMethod').val() === 'PUT') {
+                    formData.append('_method', 'PUT');
+                }
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        showAlert(response.message || 'Data berhasil disimpan');
+                        $('#fasilitasModal').modal('hide');
+                        location.reload();
+                    },
+                    error: function(xhr) {
+                        handleAjaxError(xhr);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 

@@ -10,10 +10,8 @@ return new class extends Migration
     {
         Schema::create('aplikasi_beranda', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->string('button_text')->nullable();
             $table->timestamps();
         });
     }
