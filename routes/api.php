@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AplikasiController;
 use App\Http\Controllers\Api\UserAplikasiController;
 
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,19 +16,17 @@ use App\Http\Controllers\Api\UserAplikasiController;
 |
 */
 
-Route::prefix('v1')->group(function () {
-    // Auth routes
-    Route::post('/register', [UserAplikasiController::class, 'register']);
-    Route::post('/login', [UserAplikasiController::class, 'login']);
-    
-    // Protected routes
-    Route::middleware('auth:sanctum')->group(function () {
-        Route::get('/user', [UserAplikasiController::class, 'getProfile']);
-        Route::post('/logout', [UserAplikasiController::class, 'logout']);
-        Route::post('/user/update', [UserAplikasiController::class, 'updateProfile']);
-    });
+// Remove v1 prefix temporarily for testing
+Route::post('register', [UserAplikasiController::class, 'register']);
+Route::post('login', [UserAplikasiController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('profile', [UserAplikasiController::class, 'getProfile']);
+    Route::post('logout', [UserAplikasiController::class, 'logout']);
+    Route::put('profile/update', [UserAplikasiController::class, 'updateProfile']);
 });
 
+// Application routes
 Route::prefix('aplikasi')->group(function () {
     Route::get('/beranda', [AplikasiController::class, 'getBeranda']);
     Route::get('/event', [AplikasiController::class, 'getEvent']);
