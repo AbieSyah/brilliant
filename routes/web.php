@@ -144,9 +144,6 @@ Route::post('/register', [RegisterController::class, 'store'])
 Route::get('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])->name('password.request');
 Route::post('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'update'])->name('password.update');
 
-Route::post('/register', [LoginController::class, 'register']);
-Route::post('/login', [LoginController::class, 'login']);
-
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/profile', [LoginController::class, 'getProfile']);
     Route::post('/profile/update', [LoginController::class, 'updateProfile']);

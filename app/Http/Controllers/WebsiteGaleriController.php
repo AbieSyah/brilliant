@@ -12,37 +12,26 @@ class WebsiteGaleriController extends Controller
     public function update(Request $request)
     {
         try {
-            $request->validate([
-                'galeri_title' => 'nullable|string|max:255',
-                'galeri_description' => 'nullable|string',
-                'galeri_images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480'
-            ]);
-
-            $galeri = WebsiteGaleri::first() ?? new WebsiteGaleri();
+            $galeri = WebsiteGaleri::firstOrNew();
             
             $galeri->galeri_title = $request->galeri_title;
             $galeri->galeri_description = $request->galeri_description;
 
             // Handle multiple image uploads
             if ($request->hasFile('galeri_images')) {
-                $paths = [];
+                $images = [];
                 foreach ($request->file('galeri_images') as $image) {
-                    $filename = time() . '_' . $image->getClientOriginalName();
-                    $path = $image->storeAs('galeri', $filename, 'public');
-                    $paths[] = $path;
+                    $path = $image->store('galeri', 'public');
+                    $images[] = $path;
                 }
-                $galeri->images = $paths;
+                $galeri->images = $images; // Will be automatically JSON encoded
             }
 
             $galeri->save();
 
-            return redirect()->route('admin.konten.website')
-                ->with('success', 'Galeri berhasil diperbarui');
-
+            return redirect()->back()->with('success', 'Galeri updated successfully');
         } catch (\Exception $e) {
-            Log::error('Galeri update error:', ['error' => $e->getMessage()]);
-            return redirect()->route('admin.konten.website')
-                ->with('error', 'Error: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to update galeri: ' . $e->getMessage());
         }
     }
 }

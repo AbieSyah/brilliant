@@ -15,7 +15,7 @@ class Useraplikasi extends Migration
             $table->string('password');
             $table->string('phone_number')->nullable();
             $table->string('address')->nullable();
-            $table->enum('role', ['user', 'admin'])->default('user');
+            $table->enum('role', ['user', 'member'])->default('user');
             $table->string('profile_photo')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
