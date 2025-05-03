@@ -326,10 +326,10 @@
                             <small class="text-muted">Format yang didukung: JPG, JPEG, PNG, GIF (Maksimal 20MB per gambar)</small>
                         </div>
                         <div id="galeriPreview" class="row mt-3">
-                            @if(isset($galeri->images))
+                            @if(isset($galeri->images) && is_array($galeri->images))
                                 @foreach($galeri->images as $image)
                                     <div class="col-md-4 mb-3">
-                                        <img src="{{ asset('storage/' . $image->path) }}" class="img-fluid">
+                                        <img src="{{ asset('storage/galeri/' . $image) }}" class="img-fluid">
                                     </div>
                                 @endforeach
                             @endif
