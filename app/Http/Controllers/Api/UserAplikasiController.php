@@ -107,7 +107,7 @@ class UserAplikasiController extends Controller
                 'status' => 'success',
                 'message' => 'Login successful',
                 'data' => [
-                    'user' => $user,
+                    'user' => $user, 
                     'token' => $token
                 ]
             ], Response::HTTP_OK);

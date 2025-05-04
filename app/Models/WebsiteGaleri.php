@@ -9,12 +9,9 @@ class WebsiteGaleri extends Model
     protected $table = 'website_galeri';
     
     protected $fillable = [
-        'galeri_title',
-        'galeri_description',
-        'images'
-    ];
-
-    protected $casts = [
-        'images' => 'array'
+        'konten_gambar',
+        'konten_video',
+        'video_url',
+        'video_type'
     ];
 }

@@ -122,45 +122,45 @@
                         <li class="breadcrumb-item active">Website Content</li>
                     </ol>
 
-                    <!-- First Row - 3 Cards -->
+                    <!-- First Row - 2 Cards -->
                     <div class="row mb-4">
                         <!-- Beranda Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #148BD499">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Beranda</h4>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="card text-white shadow h-100" style="background-color: #148BD499">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="card-title mb-1">Kelola Beranda</h4>
+                                            <p class="small mb-0">Atur konten halaman utama website</p>
+                                        </div>
+                                        <div class="card-icon">
+                                            <i class="fas fa-home fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" 
-                                        data-bs-target="#berandaModal">Edit Konten</a>
+                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#berandaModal">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Galeri Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #08791999">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Konten Galeri</h4>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="card text-white shadow h-100" style="background-color: #08791999">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="card-title mb-1">Kelola Galeri</h4>
+                                            <p class="small mb-0">Kelola gambar dan video website</p>
+                                        </div>
+                                        <div class="card-icon">
+                                            <i class="fas fa-images fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" 
-                                        data-bs-target="#galeriModal">Edit Konten</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Fasilitas Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #FCB40499">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Konten Fasilitas</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" 
-                                        data-bs-target="#fasilitasModal">Edit Konten</a>
+                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#galeriModal">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -168,30 +168,44 @@
                     </div>
 
                     <!-- Second Row - 2 Cards -->
-                    <div class="row justify-content-center">
-                        <!-- Booking Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #A3D9D9">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Booking</h4>
+                    <div class="row mb-4">
+                        <!-- Fasilitas Card -->
+                        <div class="col-xl-6 col-md-6">
+                            <div class="card text-white shadow h-100" style="background-color: #FCB40499">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="card-title mb-1">Kelola Fasilitas</h4>
+                                            <p class="small mb-0">Atur informasi fasilitas asrama</p>
+                                        </div>
+                                        <div class="card-icon">
+                                            <i class="fas fa-building fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" 
-                                        data-bs-target="#bookingModal">Edit Konten</a>
+                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#fasilitasModal">Edit Konten</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Footer Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #7B9669">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Footer</h4>
+                        <!-- Review Card -->
+                        <div class="col-xl-6 col-md-6">
+                            <div class="card text-white shadow h-100" style="background-color: #7B9669">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h4 class="card-title mb-1">Kelola Review</h4>
+                                            <p class="small mb-0">Atur ulasan dan testimoni</p>
+                                        </div>
+                                        <div class="card-icon">
+                                            <i class="fas fa-star fa-2x text-white-50"></i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" 
-                                        data-bs-target="#footerModal">Edit Konten</a>
+                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#reviewModal">Lihat Data</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -212,7 +226,10 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Sebelum Bootstrap script, tambahkan jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Scripts yang sudah ada -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <script src="{{ asset('/admin/js/scripts.js') }}"></script>
@@ -244,37 +261,22 @@
                     <form action="{{ route('admin.konten.website.beranda.update') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">Judul Hero</label>
-                            <input type="text" class="form-control" name="hero_title" 
-                                value="{{ $beranda->hero_title ?? '' }}">
+                            <label class="form-label">Teks Utama</label>
+                            <input type="text" class="form-control" name="teks_utama" 
+                                value="{{ $beranda->teks_utama ?? '' }}">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Subtitle Hero</label>
-                            <input type="text" class="form-control" name="hero_subtitle" 
-                                value="{{ $beranda->hero_subtitle ?? '' }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Hero Button Text</label>
-                            <input type="text" class="form-control" name="hero_button_text" 
-                                value="{{ $beranda->hero_button_text ?? '' }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Hero Subtext</label>
-                            <input type="text" class="form-control" name="hero_subtext" 
-                                value="{{ $beranda->hero_subtext ?? '' }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Hero Image (Max 20MB)</label>
-                            <input type="file" class="form-control @error('hero_image') is-invalid @enderror" 
-                                   name="hero_image" 
+                            <label class="form-label">Konten Gambar (Max 20MB)</label>
+                            <input type="file" class="form-control @error('konten_gambar') is-invalid @enderror" 
+                                   name="konten_gambar" 
                                    accept="image/*" 
                                    onchange="previewImage(this, 'heroPreview')">
                             <small class="text-muted">Format yang didukung: JPG, JPEG, PNG, GIF (Maksimal 20MB)</small>
-                            @error('hero_image')
+                            @error('konten_gambar')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                            @if(isset($beranda->hero_image))
-                                <img id="heroPreview" src="{{ asset('storage/' . $beranda->hero_image) }}" 
+                            @if(isset($beranda->konten_gambar))
+                                <img id="heroPreview" src="{{ asset('storage/' . $beranda->konten_gambar) }}" 
                                      class="preview-image">
                             @else
                                 <img id="heroPreview" class="preview-image" style="display: none;">
@@ -292,47 +294,275 @@
 
     <!-- Galeri Modal -->
     <div class="modal fade" id="galeriModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Kelola Konten Galeri</h5>
+                    <h5 class="modal-title">Kelola Galeri</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul class="mb-0">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
+                    <!-- Image Gallery -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0">Galeri Gambar</h6>
+                            <button class="btn btn-primary" onclick="showUploadImageModal()">
+                                <i class="fas fa-plus"></i> Tambah Gambar
+                            </button>
                         </div>
-                    @endif
-                    <form action="{{ route('admin.konten.website.galeri.update') }}" method="POST" enctype="multipart/form-data">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Preview</th>
+                                        <th>Nama File</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($galeri->where('konten_gambar', '!=', null) as $item)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>
+                                            <img src="{{ asset('storage/'.$item->konten_gambar) }}" alt="Gallery Image" style="max-width: 100px;">
+                                        </td>
+                                        <td>{{ basename($item->konten_gambar) }}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteGaleriItem({{ $item->id }})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Video Gallery -->
+                    <div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="mb-0">Galeri Video</h6>
+                            <button class="btn btn-primary" onclick="showUploadVideoModal()">
+                                <i class="fas fa-plus"></i> Tambah Video
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Preview</th>
+                                        <th>Nama File</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($galeri->where('konten_video', '!=', null) as $item)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>
+                                            @if($item->video_type == 'youtube')
+                                                <iframe width="150" height="100"
+                                                        src="https://www.youtube.com/embed/{{ getYoutubeId($item->video_url) }}"
+                                                        frameborder="0" allowfullscreen>
+                                                </iframe>
+                                            @elseif($item->video_type == 'other')
+                                                <a href="{{ $item->video_url }}" target="_blank" class="btn btn-sm btn-info">
+                                                    <i class="fas fa-play"></i> Play Video
+                                                </a>
+                                            @else
+                                                <video width="150" controls>
+                                                    <source src="{{ asset('storage/'.$item->konten_video) }}" type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            @endif
+                                        </td>
+                                        <td>{{ basename($item->konten_video) }}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-danger" onclick="deleteGaleriItem({{ $item->id }})">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Image Modal -->
+    <div class="modal fade" id="uploadImageModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Upload Gambar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadImageForm" action="{{ route('admin.konten.website.galeri.store.image') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">Judul Galeri</label>
-                            <input type="text" class="form-control" name="galeri_title" 
-                                value="{{ $galeri->galeri_title ?? '' }}">
+                            <label class="form-label">Pilih Gambar</label>
+                            <input type="file" class="form-control" name="konten_gambar" accept="image/*" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Video Modal -->
+    <div class="modal fade" id="uploadVideoModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs mb-3" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#uploadTab">Upload Video</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#urlTab">Video URL</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <!-- Upload Video Tab -->
+                        <div class="tab-pane fade show active" id="uploadTab">
+                            <form id="uploadVideoForm" action="{{ route('admin.konten.website.galeri.store.video') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="mb-3">
+                                    <label class="form-label">Pilih Video</label>
+                                    <input type="file" class="form-control" name="konten_video" accept="video/*" required>
+                                    <small class="text-muted">Max size: 100MB</small>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                    <button type="submit" class="btn btn-primary">Upload</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Video URL Tab -->
+                        <div class="tab-pane fade" id="urlTab">
+                            <form id="videoUrlForm" action="{{ route('admin.konten.website.galeri.store.video.url') }}" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <label class="form-label">Tipe Video</label>
+                                    <select class="form-select" name="video_type" required>
+                                        <option value="youtube">YouTube</option>
+                                        <option value="other">Platform Lain</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">URL Video</label>
+                                    <input type="url" class="form-control" name="video_url" required 
+                                           placeholder="https://www.youtube.com/watch?v=...">
+                                    <small class="text-muted">Masukkan URL video dari YouTube atau platform lain</small>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review List Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Daftar Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-primary" onclick="showCreateReviewModal()">
+                            <i class="fas fa-plus"></i> Tambah Review
+                        </button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Review</th>
+                                <th>Rating</th>
+                                <th>Gambar Profil</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($reviews as $review)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $review->nama }}</td>
+                                <td>{{ \Illuminate\Support\Str::limit($review->detail_review, 100) }}</td>
+                                <td>{{ $review->rating }}/5</td>
+                                <td>
+                                    @if($review->gambar_profil)
+                                        <img src="{{ asset('storage/'.$review->gambar_profil) }}" alt="Profile" style="max-width: 50px;">
+                                    @endif
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-warning" onclick="showEditReviewModal({{ $review->id }})">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteReview({{ $review->id }})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Review Modal -->
+    <div class="modal fade" id="createReviewModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createReviewForm" action="{{ route('admin.konten.website.review.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label class="form-label">Nama</label>
+                            <input type="text" class="form-control" name="nama" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Deskripsi Galeri</label>
-                            <textarea class="form-control" name="galeri_description" rows="3">{{ $galeri->galeri_description ?? '' }}</textarea>
+                            <label class="form-label">Detail Review</label>
+                            <textarea class="form-control" name="detail_review" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Gambar Galeri (Max 20MB)</label>
-                            <input type="file" class="form-control" name="galeri_images[]" 
-                                   accept="image/*" multiple>
-                            <small class="text-muted">Format yang didukung: JPG, JPEG, PNG, GIF (Maksimal 20MB per gambar)</small>
+                            <label class="form-label">Rating (1-5)</label>
+                            <input type="number" class="form-control" name="rating" min="1" max="5" required>
                         </div>
-                        <div id="galeriPreview" class="row mt-3">
-                            @if(isset($galeri->images) && is_array($galeri->images))
-                                @foreach($galeri->images as $image)
-                                    <div class="col-md-4 mb-3">
-                                        <img src="{{ asset('storage/galeri/' . $image) }}" class="img-fluid">
-                                    </div>
-                                @endforeach
-                            @endif
+                        <div class="mb-3">
+                            <label class="form-label">Gambar Profil</label>
+                            <input type="file" class="form-control" name="gambar_profil" accept="image/*" onchange="previewImage(this, 'createProfilePreview')">
+                            <img id="createProfilePreview" class="mt-2" style="max-width: 200px; display: none;">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -344,31 +574,132 @@
         </div>
     </div>
 
-    <!-- Fasilitas Modal -->
+    <!-- Edit Review Modal -->
+    <div class="modal fade" id="editReviewModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editReviewForm" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" id="edit_review_id">
+                        <div class="mb-3">
+                            <label class="form-label">Nama</label>
+                            <input type="text" class="form-control" name="nama" id="edit_nama" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Detail Review</label>
+                            <textarea class="form-control" name="detail_review" id="edit_detail_review" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Rating (1-5)</label>
+                            <input type="number" class="form-control" name="rating" id="edit_rating" min="1" max="5" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Gambar Profil</label>
+                            <input type="file" class="form-control" name="gambar_profil" accept="image/*" onchange="previewImage(this, 'editProfilePreview')">
+                            <img id="editProfilePreview" class="mt-2" style="max-width: 200px;">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fasilitas List Modal -->
     <div class="modal fade" id="fasilitasModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Kelola Konten Fasilitas</h5>
+                    <h5 class="modal-title">Daftar Fasilitas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('admin.konten.website.fasilitas.update') }}" method="POST" enctype="multipart/form-data">
+                    <div class="d-flex justify-content-end mb-3">
+                        <button class="btn btn-primary" onclick="showCreateFasilitasModal()">
+                            <i class="fas fa-plus"></i> Tambah Fasilitas
+                        </button>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Fasilitas</th>
+                                <th>Deskripsi</th>
+                                <th>Gambar Singkat</th>
+                                <th>Gambar Detail</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($fasilitas as $item)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $item->nama_fasilitas }}</td>
+                                <td>{{ \Illuminate\Support\Str::limit($item->deskripsi_detail, 100) }}</td>
+                                <td>
+                                    @if($item->gambar_singkat)
+                                        <img src="{{ asset('storage/'.$item->gambar_singkat) }}" alt="Singkat" style="max-width: 50px;">
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($item->gambar_detail)
+                                        <img src="{{ asset('storage/'.$item->gambar_detail) }}" alt="Detail" style="max-width: 50px;">
+                                    @endif
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-warning" onclick="showEditFasilitasModal({{ $item->id }})">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="deleteFasilitas({{ $item->id }})">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Fasilitas Modal -->
+    <div class="modal fade" id="createFasilitasModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Fasilitas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createFasilitasForm" action="{{ route('admin.konten.website.fasilitas.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label">Judul Fasilitas</label>
-                            <input type="text" class="form-control" name="fasilitas_title" 
-                                value="{{ $fasilitas->fasilitas_title ?? '' }}">
+                            <label class="form-label">Nama Fasilitas</label>
+                            <input type="text" class="form-control" name="nama_fasilitas" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Deskripsi Fasilitas</label>
-                            <textarea class="form-control" name="fasilitas_description" rows="3">{{ $fasilitas->fasilitas_description ?? '' }}</textarea>
+                            <label class="form-label">Deskripsi Detail</label>
+                            <textarea class="form-control" name="deskripsi_detail" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Icon Fasilitas</label>
-                            <input type="text" class="form-control" name="fasilitas_icon" 
-                                value="{{ $fasilitas->fasilitas_icon ?? '' }}"
-                                placeholder="Contoh: fas fa-wifi">
+                            <label class="form-label">Gambar Singkat</label>
+                            <input type="file" class="form-control" name="gambar_singkat" accept="image/*" onchange="previewImage(this, 'createSingkatPreview')">
+                            <img id="createSingkatPreview" class="mt-2" style="max-width: 200px; display: none;">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Gambar Detail</label>
+                            <input type="file" class="form-control" name="gambar_detail" accept="image/*" onchange="previewImage(this, 'createDetailPreview')">
+                            <img id="createDetailPreview" class="mt-2" style="max-width: 200px; display: none;">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -380,40 +711,40 @@
         </div>
     </div>
 
-    <!-- Booking Modal -->
-    <div class="modal fade" id="bookingModal" tabindex="-1">
+    <!-- Edit Fasilitas Modal -->
+    <div class="modal fade" id="editFasilitasModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Kelola Konten Booking</h5>
+                    <h5 class="modal-title">Edit Fasilitas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('admin.konten.website.booking.update') }}" method="POST" enctype="multipart/form-data">
+                    <form id="editFasilitasForm" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
+                        <input type="hidden" id="edit_fasilitas_id">
                         <div class="mb-3">
-                            <label class="form-label">Judul Booking</label>
-                            <input type="text" class="form-control" name="booking_title" 
-                                value="{{ $booking->booking_title ?? '' }}">
+                            <label class="form-label">Nama Fasilitas</label>
+                            <input type="text" class="form-control" name="nama_fasilitas" id="edit_nama_fasilitas" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Deskripsi Booking</label>
-                            <textarea class="form-control" name="booking_description" rows="3">{{ $booking->booking_description ?? '' }}</textarea>
+                            <label class="form-label">Deskripsi Detail</label>
+                            <textarea class="form-control" name="deskripsi_detail" id="edit_deskripsi_detail" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Gambar Aplikasi (Max 20MB)</label>
-                            <input type="file" class="form-control" name="booking_image" 
-                                   accept="image/*" onchange="previewImage(this, 'bookingPreview')">
-                            @if(isset($booking->booking_image))
-                                <img id="bookingPreview" src="{{ asset('storage/' . $booking->booking_image) }}" 
-                                     class="preview-image">
-                            @else
-                                <img id="bookingPreview" class="preview-image" style="display: none;">
-                            @endif
+                            <label class="form-label">Gambar Singkat</label>
+                            <input type="file" class="form-control" name="gambar_singkat" accept="image/*" onchange="previewImage(this, 'editSingkatPreview')">
+                            <img id="editSingkatPreview" class="mt-2" style="max-width: 200px;">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Gambar Detail</label>
+                            <input type="file" class="form-control" name="gambar_detail" accept="image/*" onchange="previewImage(this, 'editDetailPreview')">
+                            <img id="editDetailPreview" class="mt-2" style="max-width: 200px;">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>
@@ -421,53 +752,6 @@
         </div>
     </div>
 
-    <!-- Footer Modal -->
-    <div class="modal fade" id="footerModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Kelola Konten Footer</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('admin.konten.website.footer.update') }}" method="POST">
-                        @csrf
-                        <div class="mb-3">
-                            <label class="form-label">Alamat</label>
-                            <textarea class="form-control" name="footer_address" rows="2">{{ $footer->footer_address ?? '' }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" class="form-control" name="footer_email" 
-                                value="{{ $footer->footer_email ?? '' }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Nomor Telepon</label>
-                            <input type="text" class="form-control" name="footer_phone" 
-                                value="{{ $footer->footer_phone ?? '' }}">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Media Sosial</label>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control mb-2" name="footer_facebook" 
-                                        placeholder="Facebook URL" value="{{ $footer->footer_facebook ?? '' }}">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control mb-2" name="footer_instagram" 
-                                        placeholder="Instagram URL" value="{{ $footer->footer_instagram ?? '' }}">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Keep only the image preview JavaScript -->
     <script>
 function previewImage(input, previewId) {
@@ -492,7 +776,319 @@ function previewImage(input, previewId) {
 @if(session('error'))
     alert('{{ session('error') }}');
 @endif
+
+function showCreateReviewModal() {
+    $('#reviewModal').modal('hide');
+    setTimeout(() => {
+        $('#createReviewForm')[0].reset();
+        $('#createProfilePreview').hide();
+        $('#createReviewModal').modal('show');
+    }, 500);
+}
+
+function showEditReviewModal(id) {
+    $('#reviewModal').modal('hide');
+    $.ajax({
+        url: `/admin/konten/website/review/${id}/edit`,
+        method: 'GET',
+        success: function(review) {
+            $('#edit_review_id').val(id);
+            $('#edit_nama').val(review.nama);
+            $('#edit_detail_review').val(review.detail_review);
+            $('#edit_rating').val(review.rating);
+            if (review.gambar_profil) {
+                $('#editProfilePreview').attr('src', '/storage/' + review.gambar_profil).show();
+            } else {
+                $('#editProfilePreview').hide();
+            }
+            $('#editReviewForm').attr('action', `/admin/konten/website/review/${id}`);
+            setTimeout(() => {
+                $('#editReviewModal').modal('show');
+            }, 500);
+        },
+        error: function() {
+            alert('Gagal mengambil data review');
+        }
+    });
+}
+
+$(document).ready(function() {
+    // Create Review Form Submit
+    $('#createReviewForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                $('#createReviewModal').modal('hide');
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseJSON.message);
+            }
+        });
+    });
+
+    // Edit Review Form Submit
+    $('#editReviewForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        formData.append('_method', 'PUT');
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                $('#editReviewModal').modal('hide');
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseJSON.message);
+            }
+        });
+    });
+});
+
+function deleteReview(id) {
+    if(confirm('Apakah Anda yakin ingin menghapus review ini?')) {
+        $.ajax({
+            url: `{{ url('admin/konten/website/review') }}/${id}`,
+            type: 'DELETE',
+            data: {
+                "_token": "{{ csrf_token() }}"
+            },
+            success: function(response) {
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Terjadi kesalahan!');
+            }
+        });
+    }
+}
+
+function showCreateFasilitasModal() {
+    $('#fasilitasModal').modal('hide');
+    setTimeout(() => {
+        $('#createFasilitasForm')[0].reset();
+        $('#createSingkatPreview').hide();
+        $('#createDetailPreview').hide();
+        $('#createFasilitasModal').modal('show');
+    }, 500);
+}
+
+function showEditFasilitasModal(id) {
+    $('#fasilitasModal').modal('hide');
+    $.ajax({
+        url: `/admin/konten/website/fasilitas/${id}/edit`,
+        method: 'GET',
+        success: function(fasilitas) {
+            $('#edit_fasilitas_id').val(id);
+            $('#edit_nama_fasilitas').val(fasilitas.nama_fasilitas);
+            $('#edit_deskripsi_detail').val(fasilitas.deskripsi_detail);
+            if (fasilitas.gambar_singkat) {
+                $('#editSingkatPreview').attr('src', '/storage/' + fasilitas.gambar_singkat).show();
+            }
+            if (fasilitas.gambar_detail) {
+                $('#editDetailPreview').attr('src', '/storage/' + fasilitas.gambar_detail).show();
+            }
+            $('#editFasilitasForm').attr('action', `/admin/konten/website/fasilitas/update`); // Changed this line
+            setTimeout(() => {
+                $('#editFasilitasModal').modal('show');
+            }, 500);
+        },
+        error: function() {
+            alert('Gagal mengambil data fasilitas');
+        }
+    });
+}
+
+function deleteFasilitas(id) {
+    if(confirm('Apakah Anda yakin ingin menghapus fasilitas ini?')) {
+        $.ajax({
+            url: `/admin/konten/website/fasilitas/${id}`,
+            type: 'DELETE',
+            data: {
+                "_token": "{{ csrf_token() }}"
+            },
+            success: function(response) {
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Terjadi kesalahan!');
+            }
+        });
+    }
+}
+
+$(document).ready(function() {
+    // Create Fasilitas Form Submit
+    $('#createFasilitasForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                $('#createFasilitasModal').modal('hide');
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseJSON.message);
+            }
+        });
+    });
+
+    // Edit Fasilitas Form Submit
+    $('#editFasilitasForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        formData.append('_method', 'PUT');
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: function(response) {
+                $('#editFasilitasModal').modal('hide');
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseJSON.message);
+            }
+        });
+    });
+});
+
+function showUploadImageModal() {
+    $('#galeriModal').modal('hide');
+    setTimeout(() => {
+        $('#uploadImageModal').modal('show');
+    }, 500);
+}
+
+function showUploadVideoModal() {
+    $('#galeriModal').modal('hide');
+    setTimeout(() => {
+        $('#uploadVideoModal').modal('show');
+    }, 500);
+}
+
+function deleteGaleriItem(id) {
+    if(confirm('Apakah Anda yakin ingin menghapus item ini?')) {
+        $.ajax({
+            url: `/admin/konten/website/galeri/${id}`,
+            type: 'DELETE',
+            data: {
+                "_token": "{{ csrf_token() }}"
+            },
+            success: function(response) {
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Terjadi kesalahan!');
+            }
+        });
+    }
+}
+
+$(document).ready(function() {
+    $('#uploadImageForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                $('#uploadImageModal').modal('hide');
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseJSON.message);
+            }
+        });
+    });
+
+    $('#uploadVideoForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                $('#uploadVideoModal').modal('hide');
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseJSON.message);
+            }
+        });
+    });
+
+    $('#videoUrlForm').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                $('#uploadVideoModal').modal('hide');
+                alert(response.message);
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseJSON.message);
+            }
+        });
+    });
+});
 </script>
 </body>
-
 </html>

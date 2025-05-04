@@ -10,11 +10,8 @@ return new class extends Migration
     {
         Schema::create('website_beranda', function (Blueprint $table) {
             $table->id();
-            $table->string('hero_title')->nullable();
-            $table->string('hero_subtitle')->nullable();
-            $table->string('hero_image')->nullable();
-            $table->string('hero_button_text')->nullable();
-            $table->string('hero_subtext')->nullable();
+            $table->string('teks_utama')->nullable();
+            $table->string('konten_gambar')->nullable();
             $table->timestamps();
         });
     }

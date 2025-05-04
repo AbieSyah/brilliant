@@ -12,7 +12,9 @@ class AplikasiFasilitas extends Model
         'nama_kamar',
         'deskripsi',
         'gender',
-        'gambar',
-        'harga'
+        'type_kamar',
+        'kategori',
+        'harga',
+        'gambar'
     ];
 }

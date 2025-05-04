@@ -15,6 +15,8 @@ class ModelKamarforAPI extends Model
         'nama_kamar',
         'deskripsi',
         'gender',
+        'type_kamar',
+        'kategori',
         'gambar',
         'harga'
     ];

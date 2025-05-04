@@ -8,17 +8,18 @@ class CreateWebsiteGalerisTable extends Migration
 {
     public function up()
     {
-        Schema::create('website_galeri', function (Blueprint $table) {  // Changed from website_galeris
+        Schema::create('website_galeri', function (Blueprint $table) {
             $table->id();
-            $table->string('galeri_title')->nullable();
-            $table->text('galeri_description')->nullable();
-            $table->json('images')->nullable();
+            $table->string('konten_gambar')->nullable();
+            $table->string('konten_video')->nullable(); // For uploaded videos
+            $table->string('video_url')->nullable();    // For online video links
+            $table->enum('video_type', ['upload', 'youtube', 'other'])->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('website_galeri');  // Changed from website_galeris
+        Schema::dropIfExists('website_galeri');
     }
 }

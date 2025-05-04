@@ -14,28 +14,20 @@ class WebsiteBerandaController extends Controller
         try {
             Log::info('Starting image upload process');
             
-            // Basic validation
+            // Updated validation
             $request->validate([
-                'hero_title' => 'nullable|string|max:255',
-                'hero_subtitle' => 'nullable|string|max:255',
-                'hero_button_text' => 'nullable|string|max:255',
-                'hero_subtext' => 'nullable|string|max:255',
-                'hero_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480'
+                'teks_utama' => 'nullable|string|max:255',
+                'konten_gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480'
             ]);
 
             $beranda = WebsiteBeranda::first() ?? new WebsiteBeranda();
 
-            // Update text fields
-            $beranda->fill($request->only([
-                'hero_title',
-                'hero_subtitle',
-                'hero_button_text',
-                'hero_subtext'
-            ]));
+            // Update text field
+            $beranda->teks_utama = $request->teks_utama;
 
             // Handle image upload
-            if ($request->hasFile('hero_image')) {
-                $file = $request->file('hero_image');
+            if ($request->hasFile('konten_gambar')) {
+                $file = $request->file('konten_gambar');
                 
                 // Log file information
                 Log::info('File details:', [
@@ -45,8 +37,8 @@ class WebsiteBerandaController extends Controller
                 ]);
 
                 // Delete old image
-                if ($beranda->hero_image && Storage::disk('public')->exists($beranda->hero_image)) {
-                    Storage::disk('public')->delete($beranda->hero_image);
+                if ($beranda->konten_gambar && Storage::disk('public')->exists($beranda->konten_gambar)) {
+                    Storage::disk('public')->delete($beranda->konten_gambar);
                 }
 
                 // Generate unique filename
@@ -59,7 +51,7 @@ class WebsiteBerandaController extends Controller
                     throw new \Exception('Failed to store the file');
                 }
 
-                $beranda->hero_image = $path;
+                $beranda->konten_gambar = $path;
                 Log::info('Image stored successfully at: ' . $path);
             }
 
@@ -70,26 +62,26 @@ class WebsiteBerandaController extends Controller
 
             Log::info('Beranda updated successfully', ['id' => $beranda->id]);
 
-            return redirect()->route('admin.konten.website')
-                ->with('success', 'Data berhasil diperbarui');
+            return response()->json([
+                'message' => 'Data berhasil diperbarui',
+                'success' => true
+            ]);
 
         } catch (\Illuminate\Validation\ValidationException $e) {
             Log::error('Validation error:', ['errors' => $e->errors()]);
-            // Get first error message from each field
-            $errorMessages = collect($e->errors())->map(function($errors) {
-                return $errors[0];
-            })->values()->join(', ');
-            
-            return redirect()->route('admin.konten.website')
-                ->withErrors($e->errors())
-                ->with('error', 'Validasi gagal: ' . $errorMessages);
+            return response()->json([
+                'message' => 'Validasi gagal: ' . $e->errors()->first(),
+                'success' => false
+            ], 422);
         } catch (\Exception $e) {
             Log::error('Error in update:', [
                 'message' => $e->getMessage(),
                 'trace' => $e->getTraceAsString()
             ]);
-            return redirect()->route('admin.konten.website')
-                ->with('error', 'Error: ' . $e->getMessage());
+            return response()->json([
+                'message' => 'Error: ' . $e->getMessage(),
+                'success' => false
+            ], 500);
         }
     }
 }
