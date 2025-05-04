@@ -9,13 +9,14 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\WebsiteBerandaController;
 use App\Http\Controllers\WebsiteGaleriController;
 use App\Http\Controllers\WebsiteFasilitasController;
-use App\Http\Controllers\WebsiteBookingController;
-use App\Http\Controllers\WebsiteFooterController;
+use App\Http\Controllers\WebsiteReviewController;
 use App\Http\Controllers\AplikasiController; // Points to controller_api folder
 use App\Http\Controllers\UserAplikasiController;
 use App\Models\AplikasiBeranda;
 use App\Models\AplikasiEvent;
 use App\Models\AplikasiFasilitas;
+use App\Models\WebsiteReview;
+use App\Models\WebsiteGaleri;
 
 Route::get('/', function () {
     return view('home');
@@ -43,53 +44,54 @@ Route::middleware(['auth'])->group(function () {
     })->name('admin.dashboard');
 
     Route::prefix('admin/konten')->name('admin.konten.')->group(function () {
-        // Website routes with all data
+        // Website routes with data
         Route::get('/website', function () {
             $beranda = \App\Models\WebsiteBeranda::first();
-            $galeri = \App\Models\WebsiteGaleri::first();
-            $fasilitas = \App\Models\WebsiteFasilitas::first();
-            $booking = \App\Models\WebsiteBooking::first();
-            $footer = \App\Models\WebsiteFooter::first();
+            $galeri = \App\Models\WebsiteGaleri::all();
+            $fasilitas = \App\Models\WebsiteFasilitas::all();
+            $reviews = \App\Models\WebsiteReview::all();
 
             return view('admin.konten.website.website', compact(
                 'beranda',
                 'galeri',
                 'fasilitas',
-                'booking',
-                'footer'
+                'reviews'
             ));
         })->name('website');
-        // CRUD route for Beranda
-        Route::post('/website/beranda/update', [WebsiteBerandaController::class, 'update'])
-            ->name('website.beranda.update');
-        Route::post('/website/galeri/update', [WebsiteGaleriController::class, 'update'])
-            ->name('website.galeri.update');
 
-        Route::post('/website/fasilitas/update', [WebsiteFasilitasController::class, 'update'])
-            ->name('website.fasilitas.update');
+        Route::prefix('website')->group(function () {
+            // Beranda routes
+            Route::post('/beranda/update', [WebsiteBerandaController::class, 'update'])
+                ->name('website.beranda.update');
+                
+            // Galeri routes
+            Route::post('/galeri/update', [WebsiteGaleriController::class, 'update'])
+                ->name('website.galeri.update');
+                
+            // Fasilitas routes
+            Route::prefix('fasilitas')->name('website.fasilitas.')->group(function () {
+                Route::post('/', [WebsiteFasilitasController::class, 'store'])->name('store');
+                Route::post('/update', [WebsiteFasilitasController::class, 'update'])->name('update'); // Changed route
+                Route::get('/{id}/edit', [WebsiteFasilitasController::class, 'edit'])->name('edit');
+                Route::delete('/{id}', [WebsiteFasilitasController::class, 'destroy'])->name('destroy');
+            });
+            
+            // Review routes
+            Route::prefix('review')->name('website.review.')->group(function () {
+                Route::post('/store', [WebsiteReviewController::class, 'store'])->name('store');
+                Route::get('/{id}/edit', [WebsiteReviewController::class, 'edit'])->name('edit');
+                Route::put('/{id}', [WebsiteReviewController::class, 'update'])->name('update');
+                Route::delete('/{id}', [WebsiteReviewController::class, 'destroy'])->name('destroy');
+            });
 
-        Route::post('/website/booking/update', [WebsiteBookingController::class, 'update'])
-            ->name('website.booking.update');
-
-        Route::post('/website/footer/update', [WebsiteFooterController::class, 'update'])
-            ->name('website.footer.update');
-
-        // Existing website content routes
-        Route::get('/galeri', function () {
-            return view('admin.konten.website.galeri');
-        })->name('galeri');
-
-        Route::get('/fasilitas', function () {
-            return view('admin.konten.website.fasilitas');
-        })->name('fasilitas');
-
-        Route::get('/booking', function () {
-            return view('admin.konten.website.booking');
-        })->name('booking');
-
-        Route::get('/footer', function () {
-            return view('admin.konten.website.footer');
-        })->name('footer');
+            // Galeri routes
+            Route::prefix('galeri')->name('website.galeri.')->group(function () {
+                Route::post('/image', [WebsiteGaleriController::class, 'storeImage'])->name('store.image');
+                Route::post('/video', [WebsiteGaleriController::class, 'storeVideo'])->name('store.video');
+                Route::post('/video-url', [WebsiteGaleriController::class, 'storeVideoUrl'])->name('store.video.url');
+                Route::delete('/{id}', [WebsiteGaleriController::class, 'destroy'])->name('destroy');
+            });
+        });
 
         // Aplikasi routes with data
         Route::get('/aplikasi', function () {
@@ -113,6 +115,14 @@ Route::middleware(['auth'])->group(function () {
             ->name('aplikasi.event.update');
         Route::post('/aplikasi/fasilitas/update', [AplikasiController::class, 'updateFasilitas'])
             ->name('aplikasi.fasilitas.update');
+
+        // Review routes
+        Route::prefix('website/review')->name('website.review.')->group(function () {
+            Route::post('/store', [WebsiteReviewController::class, 'store'])->name('store');
+            Route::get('/{id}/edit', [WebsiteReviewController::class, 'edit'])->name('edit');
+            Route::put('/{id}', [WebsiteReviewController::class, 'update'])->name('update');
+            Route::delete('/{id}', [WebsiteReviewController::class, 'destroy'])->name('destroy');
+        });
     });
 
     Route::prefix('admin/konten/aplikasi')->group(function () {
@@ -128,8 +138,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/fasilitas', [AplikasiController::class, 'fasilitasStore'])->name('admin.konten.aplikasi.fasilitas.store');
         Route::get('/fasilitas/{id}/edit', [AplikasiController::class, 'fasilitasEdit'])->name('admin.konten.aplikasi.fasilitas.edit');
         Route::put('/fasilitas/{id}', [AplikasiController::class, 'fasilitasUpdate'])->name('admin.konten.aplikasi.fasilitas.update');
-        Route::delete('/fasilitas/{id}', [AplikasiController::class, 'fasilitasDestroy'])->name('admin.konten.aplikasi.fasilitas.destroy');
-    });
+        Route::delete('/fasilitas/{id}', [AplikasiController::class, 'fasilitasDestroy'])->name('admin.konten.aplikasi.fasilitas.destroy');    })
+        ;
 
     // Pesanan routes
     Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('admin.pesanan.main');

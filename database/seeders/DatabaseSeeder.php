@@ -6,11 +6,12 @@ use Illuminate\Database\Seeder;
 use App\Models\UserAplikasi;
 use App\Models\AplikasiEvent;
 use App\Models\ModelKamarforAPI;
+use App\Models\AplikasiFasilitas;
 use App\Models\Pesanan;
 use App\Models\WebsiteBeranda;
 use App\Models\WebsiteBooking;
 use App\Models\WebsiteFasilitas;
-use App\Models\WebsiteFooter;
+use App\Models\WebsiteReview;
 use App\Models\WebsiteGaleri;
 use Illuminate\Support\Facades\Hash;
 
@@ -60,52 +61,55 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // Seed Kamar
-        $kamar1 = ModelKamarforAPI::create([
-            'nama_kamar' => 'Kamar Reguler A1',
+        $kamar1 = AplikasiFasilitas::create([
+            'nama_kamar' => 'Kamar Regular A1',
             'deskripsi' => 'Kamar standar untuk 4 orang',
             'gender' => 'pria',
+            'type_kamar' => 'regular',
+            'kategori' => 'bieplus',
             'harga' => 750000.00
         ]);
 
-        $kamar2 = ModelKamarforAPI::create([
-            'nama_kamar' => 'Kamar Premium P1',
+        $kamar2 = AplikasiFasilitas::create([
+            'nama_kamar' => 'Kamar VIP P1',
             'deskripsi' => 'Kamar premium untuk 2 orang dengan AC',
             'gender' => 'wanita',
+            'type_kamar' => 'vip',
+            'kategori' => 'brilliant_selatan',
             'harga' => 1250000.00
         ]);
 
         // Seed Website Beranda
         WebsiteBeranda::create([
-            'hero_title' => 'Selamat Datang di Asrama Kami',
-            'hero_subtitle' => 'Tempat Tinggal Nyaman untuk Mahasiswa',
-            'hero_image' => 'hero-image.jpg',
-            'hero_button_text' => 'Pesan Sekarang',
-            'hero_subtext' => 'Fasilitas Lengkap dan Lokasi Strategis'
-        ]);
-
-        // Seed Website Booking
-        WebsiteBooking::create([
-            'booking_title' => 'Cara Pemesanan Kamar',
-            'booking_description' => 'Pemesanan kamar dapat dilakukan melalui aplikasi atau website kami',
-            'booking_image' => 'booking-guide.jpg'
+            'teks_utama' => 'Selamat Datang di Asrama Kami',
+            'konten_gambar' => 'beranda/hero-image.jpg'
         ]);
 
         // Seed Website Fasilitas
         $fasilitas = [
             [
-                'fasilitas_title' => 'WiFi Gratis',
-                'fasilitas_description' => 'Internet cepat 24 jam',
-                'fasilitas_icon' => 'wifi-icon'
+                'nama_fasilitas' => 'WiFi Berkecepatan Tinggi',
+                'deskripsi_detail' => 'Akses internet berkecepatan tinggi 24/7 dengan bandwidth dedicated untuk setiap lantai. Mendukung kegiatan belajar online dan entertainment.',
+                'gambar_singkat' => 'fasilitas/wifi-singkat.jpg',
+                'gambar_detail' => 'fasilitas/wifi-detail.jpg'
             ],
             [
-                'fasilitas_title' => 'Ruang Belajar',
-                'fasilitas_description' => 'Tersedia ruang belajar bersama',
-                'fasilitas_icon' => 'study-icon'
+                'nama_fasilitas' => 'Ruang Belajar Modern',
+                'deskripsi_detail' => 'Ruang belajar yang nyaman dilengkapi dengan meja, kursi ergonomis, dan papan tulis. Tersedia area diskusi dan ruang private study.',
+                'gambar_singkat' => 'fasilitas/study-singkat.jpg',
+                'gambar_detail' => 'fasilitas/study-detail.jpg'
             ],
             [
-                'fasilitas_title' => 'Laundry',
-                'fasilitas_description' => 'Layanan laundry tersedia',
-                'fasilitas_icon' => 'laundry-icon'
+                'nama_fasilitas' => 'Laundry Service',
+                'deskripsi_detail' => 'Layanan laundry profesional dengan sistem antar-jemput ke kamar. Menjamin kebersihan dan kerapian pakaian penghuni.',
+                'gambar_singkat' => 'fasilitas/laundry-singkat.jpg',
+                'gambar_detail' => 'fasilitas/laundry-detail.jpg'
+            ],
+            [
+                'nama_fasilitas' => 'Kantin & Cafe',
+                'deskripsi_detail' => 'Area makan yang bersih dan nyaman dengan berbagai pilihan menu sehat. Buka dari pagi hingga malam untuk memenuhi kebutuhan penghuni.',
+                'gambar_singkat' => 'fasilitas/kantin-singkat.jpg',
+                'gambar_detail' => 'fasilitas/kantin-detail.jpg'
             ]
         ];
 
@@ -113,23 +117,77 @@ class DatabaseSeeder extends Seeder
             WebsiteFasilitas::create($f);
         }
 
-        // Seed Website Footer
-        WebsiteFooter::create([
-            'footer_address' => 'Jl. Contoh No. 123, Kota, Negara',
-            'footer_email' => 'info@asrama.com',
-            'footer_phone' => '081234567890',
-            'footer_facebook' => 'https://facebook.com/asrama',
-            'footer_instagram' => 'https://instagram.com/asrama'
-        ]);
-
-        // Seed Website Galeri
-        WebsiteGaleri::create([
-            'galeri_title' => 'Galeri Asrama',
-            'galeri_description' => 'Dokumentasi fasilitas dan kegiatan asrama',
-            'images' => [
-                'kamar-1.jpg',
+        // Seed Website Review
+        $reviews = [
+            [
+                'nama' => 'John Doe',
+                'gambar_profil' => 'profile1.jpg',
+                'detail_review' => 'Asrama yang sangat nyaman dengan fasilitas lengkap. Pelayanan ramah dan lokasi strategis.',
+                'rating' => 5
+            ],
+            [
+                'nama' => 'Jane Smith',
+                'gambar_profil' => 'profile2.jpg',
+                'detail_review' => 'Kamar bersih dan rapi. WiFi cepat dan stabil. Sangat cocok untuk mahasiswa.',
+                'rating' => 4
+            ],
+            [
+                'nama' => 'Mike Johnson',
+                'gambar_profil' => 'profile3.jpg',
+                'detail_review' => 'Lingkungan yang kondusif untuk belajar. Staff sangat membantu.',
+                'rating' => 5
             ]
-        ]);
+        ];
+
+        foreach ($reviews as $review) {
+            WebsiteReview::create($review);
+        }
+        // Seed Website Galeri
+        $galeri = [
+            // Images
+            [
+                'konten_gambar' => 'galeri/kamar-standard.jpg',
+                'konten_video' => null,
+                'video_url' => null,
+                'video_type' => null
+            ],
+            [
+                'konten_gambar' => 'galeri/ruang-belajar.jpg',
+                'konten_video' => null,
+                'video_url' => null,
+                'video_type' => null
+            ],
+            [
+                'konten_gambar' => 'galeri/kantin.jpg',
+                'konten_video' => null,
+                'video_url' => null,
+                'video_type' => null
+            ],
+            // YouTube Videos
+            [
+                'konten_gambar' => null,
+                'konten_video' => null,
+                'video_url' => 'https://www.youtube.com/watch?v=example1',
+                'video_type' => 'youtube'
+            ],
+            [
+                'konten_gambar' => null,
+                'konten_video' => null,
+                'video_url' => 'https://www.youtube.com/watch?v=example2',
+                'video_type' => 'youtube'
+            ],
+            // Uploaded Video
+            [
+                'konten_gambar' => null,
+                'konten_video' => 'galeri/video/tour-asrama.mp4',
+                'video_url' => null,
+                'video_type' => 'upload'
+            ]
+        ];
+
+        foreach ($galeri as $item) {
+            WebsiteGaleri::create($item);
+        }
 
         // Seed Pesanan
         $pesanan = [

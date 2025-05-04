@@ -362,21 +362,18 @@ class AplikasiController extends Controller
                 'nama_kamar' => 'required|string|max:255',
                 'deskripsi' => 'nullable|string',
                 'gender' => 'required|in:pria,wanita,campur',
+                'type_kamar' => 'required|in:vip,vvip,regular,barrak',
+                'kategori' => 'required|in:bieplus,brilliant_selatan',
                 'harga' => 'required|numeric|min:0',
-                'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
-            ], [
-                'nama_kamar.required' => 'Nama kamar harus diisi',
-                'gender.required' => 'Gender harus dipilih',
-                'harga.required' => 'Harga harus diisi',
-                'harga.numeric' => 'Harga harus berupa angka',
-                'gambar.image' => 'File harus berupa gambar',
-                'gambar.max' => 'Ukuran gambar maksimal 20MB'
+                'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480'
             ]);
 
             $kamar = new AplikasiFasilitas();
             $kamar->nama_kamar = $request->nama_kamar;
             $kamar->deskripsi = $request->deskripsi;
             $kamar->gender = $request->gender;
+            $kamar->type_kamar = $request->type_kamar;
+            $kamar->kategori = $request->kategori;
             $kamar->harga = $request->harga;
 
             if ($request->hasFile('gambar')) {
@@ -385,27 +382,15 @@ class AplikasiController extends Controller
 
             $kamar->save();
 
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Kamar berhasil ditambahkan'
-                ], 200);
-            }
-
-            return redirect()
-                ->route('admin.konten.aplikasi')
-                ->with('success', 'Kamar berhasil ditambahkan');
-
+            return response()->json([
+                'success' => true,
+                'message' => 'Kamar berhasil ditambahkan'
+            ]);
         } catch (\Exception $e) {
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Terjadi kesalahan saat menyimpan kamar'
-                ], 500);
-            }
-            return back()
-                ->with('error', 'Terjadi kesalahan saat menyimpan kamar')
-                ->withInput();
+            return response()->json([
+                'success' => false,
+                'message' => 'Gagal menambahkan kamar: ' . $e->getMessage()
+            ], 500);
         }
     }
 
@@ -426,26 +411,22 @@ class AplikasiController extends Controller
                 'nama_kamar' => 'required|string|max:255',
                 'deskripsi' => 'nullable|string',
                 'gender' => 'required|in:pria,wanita,campur',
+                'type_kamar' => 'required|in:vip,vvip,regular,barrak',
+                'kategori' => 'required|in:bieplus,brilliant_selatan',
                 'harga' => 'required|numeric|min:0',
-                'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480',
-            ], [
-                'nama_kamar.required' => 'Nama kamar harus diisi',
-                'gender.required' => 'Gender harus dipilih',
-                'harga.required' => 'Harga harus diisi',
-                'harga.numeric' => 'Harga harus berupa angka',
-                'gambar.image' => 'File harus berupa gambar',
-                'gambar.max' => 'Ukuran gambar maksimal 20MB'
+                'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480'
             ]);
 
             $kamar = AplikasiFasilitas::findOrFail($id);
             $kamar->nama_kamar = $request->nama_kamar;
             $kamar->deskripsi = $request->deskripsi;
             $kamar->gender = $request->gender;
+            $kamar->type_kamar = $request->type_kamar;
+            $kamar->kategori = $request->kategori;
             $kamar->harga = $request->harga;
 
             if ($request->hasFile('gambar')) {
-                // Delete old image if exists
-                if ($kamar->gambar && Storage::disk('public')->exists($kamar->gambar)) {
+                if ($kamar->gambar) {
                     Storage::disk('public')->delete($kamar->gambar);
                 }
                 $kamar->gambar = $request->file('gambar')->store('kamar', 'public');
@@ -453,37 +434,15 @@ class AplikasiController extends Controller
 
             $kamar->save();
 
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Kamar berhasil diperbarui'
-                ], 200);
-            }
-
-            return redirect()
-                ->route('admin.konten.aplikasi')
-                ->with('success', 'Kamar berhasil diperbarui');
-
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => false,
-                    'errors' => $e->errors()
-                ], 422);
-            }
-            return back()
-                ->withErrors($e->errors())
-                ->withInput();
+            return response()->json([
+                'success' => true,
+                'message' => 'Kamar berhasil diperbarui'
+            ]);
         } catch (\Exception $e) {
-            if ($request->ajax()) {
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Terjadi kesalahan saat memperbarui kamar'
-                ], 500);
-            }
-            return back()
-                ->with('error', 'Terjadi kesalahan saat memperbarui kamar')
-                ->withInput();
+            return response()->json([
+                'success' => false,
+                'message' => 'Gagal memperbarui kamar: ' . $e->getMessage()
+            ], 500);
         }
     }
 

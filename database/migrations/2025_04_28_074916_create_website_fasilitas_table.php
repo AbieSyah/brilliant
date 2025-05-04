@@ -8,17 +8,18 @@ class CreateWebsiteFasilitasTable extends Migration
 {
     public function up()
     {
-        Schema::create('website_fasilitas', function (Blueprint $table) {  // Already correct
+        Schema::create('website_fasilitas', function (Blueprint $table) {
             $table->id();
-            $table->string('fasilitas_title')->nullable();
-            $table->text('fasilitas_description')->nullable();
-            $table->string('fasilitas_icon', 50)->nullable();
+            $table->string('nama_fasilitas');
+            $table->text('deskripsi_detail');
+            $table->string('gambar_singkat')->nullable();
+            $table->string('gambar_detail')->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('website_fasilitas');  // Already correct
+        Schema::dropIfExists('website_fasilitas');
     }
 }

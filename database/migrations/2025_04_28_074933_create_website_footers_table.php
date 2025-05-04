@@ -8,19 +8,19 @@ class CreateWebsiteFootersTable extends Migration
 {
     public function up()
     {
-        Schema::create('website_footer', function (Blueprint $table) {  // Changed from website_footers
+
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->text('footer_address')->nullable();
-            $table->string('footer_email')->nullable();
-            $table->string('footer_phone', 20)->nullable();
-            $table->string('footer_facebook')->nullable();
-            $table->string('footer_instagram')->nullable();
+            $table->string('nama');
+            $table->string('gambar_profil')->nullable();
+            $table->text('detail_review');
+            $table->integer('rating');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('website_footer');  // Changed from website_footers
+        Schema::dropIfExists('reviews');
     }
 }

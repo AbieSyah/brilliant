@@ -124,51 +124,69 @@
 
                     <!-- Cards Section -->
                     <div class="row mb-4">
-                        <!-- Beranda Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #527AA6">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Beranda</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#berandaModal">
-                                        Edit Konten
-                                    </a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Event Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #D4ACA2">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Event</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#eventListModal">
-                                        Lihat Data
-                                    </a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Fasilitas Card -->
-                        <div class="col-xl-4 col-md-6 mb-4">
-                            <div class="card text-white h-100 shadow" style="background-color: #DC580599">
-                                <div class="card-body py-4">
-                                    <h4 class="card-title mb-0">Kelola Kamar</h4>
-                                </div>
-                                <div class="card-footer d-flex align-items-center justify-content-between py-3">
-                                    <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#kamarListModal">
-                                        Lihat Data
-                                    </a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Beranda Card -->
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card text-white shadow h-100" style="background-color: #527AA6">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h4 class="card-title mb-1">Kelola Beranda</h4>
+                        <p class="small mb-0">Atur konten halaman utama aplikasi</p>
                     </div>
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt fa-2x text-white-50"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between py-3">
+                <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#berandaModal">Edit Konten</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Card -->
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card text-white shadow h-100" style="background-color: #D4ACA2">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h4 class="card-title mb-1">Kelola Event</h4>
+                        <p class="small mb-0">Atur event dan kegiatan asrama</p>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fas fa-calendar-alt fa-2x text-white-50"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between py-3">
+                <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#eventListModal">Lihat Data</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kamar Card -->
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card text-white shadow h-100" style="background-color: #DC580599">
+            <div class="card-body p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h4 class="card-title mb-1">Kelola Kamar</h4>
+                        <p class="small mb-0">Atur informasi kamar asrama</p>
+                    </div>
+                    <div class="card-icon">
+                        <i class="fas fa-bed fa-2x text-white-50"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between py-3">
+                <a class="small text-white stretched-link" href="#" data-bs-toggle="modal" data-bs-target="#kamarListModal">Lihat Data</a>
+                <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
                 </div>
             </main>
 
@@ -311,6 +329,22 @@
                             <input type="number" class="form-control" name="harga" id="edit_harga" min="0" required>
                         </div>
                         <div class="mb-3">
+                            <label class="form-label">Tipe Kamar</label>
+                            <select class="form-control" name="type_kamar" id="edit_type_kamar" required>
+                                <option value="vip">VIP</option>
+                                <option value="vvip">VVIP</option>
+                                <option value="regular">Regular</option>
+                                <option value="barrak">Barrak</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Kategori</label>
+                            <select class="form-control" name="kategori" id="edit_kategori" required>
+                                <option value="bieplus">Bieplus</option>
+                                <option value="brilliant_selatan">Brilliant Selatan</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label">Gambar (Max 20MB)</label>
                             <input type="file" class="form-control" name="gambar" accept="image/*" onchange="previewImage(this, 'fasilitasPreview')">
                             <img id="fasilitasPreview" src="" class="preview-image" style="display: none;">
@@ -394,6 +428,8 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Kamar</th>
+                                <th>Tipe Kamar</th>
+                                <th>Kategori</th>
                                 <th>Deskripsi</th>
                                 <th>Gender</th>
                                 <th>Harga</th>
@@ -405,6 +441,8 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $kamar->nama_kamar }}</td>
+                                <td>{{ strtoupper($kamar->type_kamar) }}</td>
+                                <td>{{ str_replace('_', ' ', ucfirst($kamar->kategori)) }}</td>
                                 <td>{{ \Illuminate\Support\Str::limit($kamar->deskripsi, 100) }}</td>
                                 <td>{{ ucfirst($kamar->gender) }}</td>
                                 <td>Rp {{ number_format($kamar->harga, 0, ',', '.') }}</td>
@@ -580,6 +618,8 @@
                 $('#edit_deskripsi').val(kamar.deskripsi); // Make sure this ID matches your textarea
                 $('#edit_gender').val(kamar.gender);
                 $('#edit_harga').val(kamar.harga);
+                $('#edit_type_kamar').val(kamar.type_kamar);
+                $('#edit_kategori').val(kamar.kategori);
                 
                 if (kamar.gambar) {
                     $('#fasilitasPreview').attr('src', '/storage/' + kamar.gambar).show();

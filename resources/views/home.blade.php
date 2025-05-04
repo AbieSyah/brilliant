@@ -126,6 +126,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Fasilitas Section -->
     </section>
     <section class="fasilitas-section" id="fasilitas">
         <div class="container text-center">

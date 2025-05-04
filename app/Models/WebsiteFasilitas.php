@@ -9,8 +9,9 @@ class WebsiteFasilitas extends Model
     protected $table = 'website_fasilitas';
     
     protected $fillable = [
-        'fasilitas_title',
-        'fasilitas_description',
-        'fasilitas_icon'
+        'nama_fasilitas',
+        'deskripsi_detail',
+        'gambar_singkat',
+        'gambar_detail'
     ];
 }

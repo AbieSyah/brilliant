@@ -33,6 +33,8 @@ class KamarController extends Controller
                 'nama_kamar' => 'required|string|max:255',
                 'deskripsi' => 'nullable|string',
                 'gender' => 'required|in:pria,wanita,campur',
+                'type_kamar' => 'required|in:vip,vvip,regular,barrak',
+                'kategori' => 'required|in:bieplus,brilliant_selatan',
                 'gambar' => 'nullable|string',
                 'harga' => 'required|numeric|min:0'
             ]);
@@ -84,6 +86,8 @@ class KamarController extends Controller
                 'nama_kamar' => 'string|max:255',
                 'deskripsi' => 'nullable|string',
                 'gender' => 'in:pria,wanita,campur',
+                'type_kamar' => 'in:vip,vvip,regular,barrak',
+                'kategori' => 'in:bieplus,brilliant_selatan',
                 'gambar' => 'nullable|string',
                 'harga' => 'numeric|min:0'
             ]);

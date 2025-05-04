@@ -13,6 +13,8 @@ class AplikasiFasilitas extends Migration
             $table->string('nama_kamar');
             $table->text('deskripsi')->nullable();
             $table->enum('gender', ['pria', 'wanita', 'campur'])->default('campur');
+            $table->string('type_kamar'); 
+            $table->string('kategori'); 
             $table->string('gambar')->nullable();
             $table->decimal('harga', 10, 2);
             $table->timestamps();
