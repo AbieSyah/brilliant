@@ -147,7 +147,7 @@
                     <img src="{{ asset('/landing-page/assets/img/logos/C2.png') }}" alt="Logo VIP" class="card-logo">
                     <h3>Reguler</h3>
                     <div class="image-container">
-                        <img src="{{ asset('/landing-page/assets/img/F1.png') }}" alt="Reguler">
+                        <img src="{{ asset('/landing-page/assets/img/regular-selatan.jpg') }}" alt="Reguler">
                         <button class="detail-button" onclick="openPopup('Reguler')">Detail</button>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                     <img src="{{ asset('/landing-page/assets/img/logos/C1.png') }}" alt="Logo VIP" class="card-logo">
                     <h3>VIP</h3>
                     <div class="image-container">
-                        <img src="{{ asset('/landing-page/assets/img/F1.png') }}" alt="VIP">
+                        <img src="{{ asset('/landing-page/assets/img/vip-selatan.jpg') }}" alt="VIP">
                         <button class="detail-button" onclick="openPopup('VIP')">Detail</button>
                     </div>
                 </div>
@@ -165,19 +165,53 @@
                     <img src="{{ asset('/landing-page/assets/img/logos/C3.png') }}" alt="Logo VIP" class="card-logo">
                     <h3>Homestay</h3>
                     <div class="image-container">
-                        <img src="{{ asset('/landing-page/assets/img/F1.png') }}" alt="Homestay">
+                        <img src="{{ asset('/landing-page/assets/img/homestay-selatan.jpg') }}" alt="Homestay">
                         <button class="detail-button" onclick="openPopup('Homestay')">Detail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mt-5 mb-5">
+                <p
+                    style="font-family: 'Montserrat', sans-serif; font-weight: 500; color: #000000; font-size: 2rem; margin: 0;">
+                    Bieplus
+                </p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C2.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Camp Bieplus</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/vvip-bieplus.jpg') }}" alt="Reguler">
+                        <button class="detail-button" onclick="openPopup('VVIP-Bieplus')">Detail</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C1.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Ruang Kelas</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/kelas-bieplus.jpg') }}" alt="VIP">
+                        <button class="detail-button" onclick="openPopup('Kelas-Bieplus')">Detail</button>
                     </div>
                 </div>
             </div>
         </div>
 
+
+
         <!-- Popup -->
         <div id="popup" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup()">&times;</span>
-                <h2 id="popup-title"></h2>
-                <p>Isi detail tentang camp akan ditampilkan di sini.</p>
+                <div class="popup-header">
+                    <h2 id="popup-title"></h2>
+                </div>
+                <div class="popup-body">
+                    <div class="popup-description">
+                        <pre id="popup-description"></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -393,15 +427,40 @@
     });
 </script>
 <script>
-    function openPopup(campName) {
-        document.getElementById('popup').style.display = 'block';
-        document.getElementById('popup-title').innerText = campName;
+    // Replace your existing openPopup function
+    function openPopup(campType) {
+        const popup = document.getElementById('popup');
+        const title = document.getElementById('popup-title');
+        const description = document.getElementById('popup-description');
+        
+        const details = campDetails[campType];
+        
+        if (details) {
+            title.textContent = details.title;
+            description.textContent = details.description;
+            popup.style.display = 'block';
+        }
     }
+</script>
+<script>
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
 
-    function closePopup() {
-        document.getElementById('popup').style.display = 'none';
+// Also add close on escape key and outside click
+window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closePopup();
     }
+});
 
+// Close when clicking outside the popup content
+document.querySelector('.popup').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closePopup();
+    }
+});
 </script>
 <script>
     const carousel = document.getElementById('commentCarousel');
@@ -490,6 +549,62 @@
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // untuk iOS
     });
+</script>
+<script>
+    // Add this at the beginning of your script section
+    const campDetails = {
+        'Reguler': {
+            title: 'Kamar Reguler',
+            description: 'Kamar standar yang nyaman untuk 4 orang dengan fasilitas:\n' +
+                '• 2 tempat tidur tingkat\n' +
+                '• Lemari pakaian\n' +
+                '• Meja belajar\n' +
+                '• Kamar mandi bersama\n' +
+                '• Area WiFi'
+        },
+        'VIP': {
+            title: 'Kamar VIP',
+            description: 'Kamar premium untuk 2 orang dengan fasilitas:\n' +
+                '• 2 tempat tidur terpisah\n' +
+                '• AC\n' +
+                '• Lemari pakaian pribadi\n' +
+                '• Meja belajar pribadi\n' +
+                '• Kamar mandi dalam\n' +
+                '• WiFi kecepatan tinggi'
+        },
+        'Homestay': {
+            title: 'Kamar Homestay',
+            description: 'Pengalaman menginap seperti di rumah dengan fasilitas:\n' +
+                '• Kamar pribadi\n' +
+                '• AC\n' +
+                '• Ruang tamu\n' +
+                '• Dapur bersama\n' +
+                '• Kamar mandi dalam\n' +
+                '• WiFi premium'
+        },
+        'VVIP-Bieplus': {
+            title: 'VVIP Bieplus',
+            description: 'Kamar super premium dengan fasilitas terlengkap:\n' +
+                '• Kamar luas untuk 1-2 orang\n' +
+                '• AC\n' +
+                '• Smart TV\n' +
+                '• Mini pantry\n' +
+                '• Kamar mandi mewah\n' +
+                '• WiFi dedicated\n' +
+                '• Ruang belajar pribadi'
+        },
+        'Kelas-Bieplus': {
+            title: 'Ruang Kelas Bieplus',
+            description: 'Fasilitas pembelajaran modern:\n' +
+                '• Smart board\n' +
+                '• Proyektor HD\n' +
+                '• Sound system\n' +
+                '• AC\n' +
+                '• Meja kursi ergonomis\n' +
+                '• WiFi kecepatan tinggi\n' +
+                '• Kapasitas hingga 20 orang'
+        }
+    };
 </script>
 
 </html>
