@@ -76,10 +76,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#booking">Booking</a>
                         </li>
-                        <a class="pesan-logo" href="#">
+                        <!-- <a class="pesan-logo" href="#">
                             <img src="{{ asset('/landing-page/assets/img/pesan.png') }}" alt="Logo" width="50"
                                 height="50">
-                        </a>
+                        </a> -->
                     </ul>
                 </div>
             </div>
@@ -605,6 +605,89 @@ document.querySelector('.popup').addEventListener('click', function(event) {
                 '• Kapasitas hingga 20 orang'
         }
     };
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('commentCarousel');
+    const carouselItems = carousel.querySelector('.carousel-items');
+    const cards = document.querySelectorAll('.comment-card');
+    
+    // Clone cards for infinite effect
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        carouselItems.appendChild(clone);
+    });
+
+    let isScrolling = false;
+    let startX;
+    let scrollLeft;
+
+    // Track scrolling position
+    carouselItems.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                const totalWidth = carouselItems.scrollWidth / 2;
+                const currentScroll = carouselItems.scrollLeft;
+
+                if (currentScroll >= totalWidth) {
+                    carouselItems.scrollLeft = 0;
+                } else if (currentScroll <= 0) {
+                    carouselItems.scrollLeft = totalWidth;
+                }
+                isScrolling = false;
+            });
+        }
+        isScrolling = true;
+    });
+
+    // Update arrow buttons
+    function updateArrows() {
+        const scrollPosition = carouselItems.scrollLeft;
+        leftArrow.style.display = 'flex';
+        rightArrow.style.display = 'flex';
+    }
+
+    // Scroll functions
+    function scrollCarousel(distance) {
+        const currentScroll = carouselItems.scrollLeft;
+        const targetScroll = currentScroll + distance;
+        
+        carouselItems.scrollTo({
+            left: targetScroll,
+            behavior: 'smooth'
+        });
+    }
+
+    // Arrow click handlers
+    document.getElementById('leftArrow').addEventListener('click', () => {
+        scrollCarousel(-300);
+    });
+
+    document.getElementById('rightArrow').addEventListener('click', () => {
+        scrollCarousel(300);
+    });
+
+    // Touch events for mobile
+    carouselItems.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - carouselItems.offsetLeft;
+        scrollLeft = carouselItems.scrollLeft;
+    });
+
+    carouselItems.addEventListener('touchmove', (e) => {
+        if (!startX) return;
+        const x = e.touches[0].pageX - carouselItems.offsetLeft;
+        const walk = (x - startX) * 2;
+        carouselItems.scrollLeft = scrollLeft - walk;
+    });
+
+    carouselItems.addEventListener('touchend', () => {
+        startX = null;
+    });
+
+    // Initialize
+    updateArrows();
+    window.addEventListener('resize', updateArrows);
+});
 </script>
 
 </html>
