@@ -315,7 +315,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Preview</th>
-                                        <th>Nama File</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -326,7 +325,6 @@
                                         <td>
                                             <img src="{{ asset('storage/'.$item->konten_gambar) }}" alt="Gallery Image" style="max-width: 100px;">
                                         </td>
-                                        <td>{{ basename($item->konten_gambar) }}</td>
                                         <td>
                                             <button type="button" class="btn btn-sm btn-danger" onclick="deleteGaleriItem({{ $item->id }})">
                                                 <i class="fas fa-trash"></i>
@@ -341,7 +339,7 @@
 
                     <!-- Video Gallery -->
                     <div>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">x
                             <h6 class="mb-0">Galeri Video</h6>
                             <button class="btn btn-primary" onclick="showUploadVideoModal()">
                                 <i class="fas fa-plus"></i> Tambah Video
@@ -353,7 +351,6 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Preview</th>
-                                        <th>Nama File</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -378,7 +375,6 @@
                                                 </video>
                                             @endif
                                         </td>
-                                        <td>{{ basename($item->konten_video) }}</td>
                                         <td>
                                             <button type="button" class="btn btn-sm btn-danger" onclick="deleteGaleriItem({{ $item->id }})">
                                                 <i class="fas fa-trash"></i>

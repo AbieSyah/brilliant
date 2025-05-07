@@ -321,7 +321,6 @@
                             <select class="form-control" name="gender" id="edit_gender" required>
                                 <option value="pria">Pria</option>
                                 <option value="wanita">Wanita</option>
-                                <option value="campur">Campur</option>
                             </select>
                         </div>
                         <div class="mb-3">
