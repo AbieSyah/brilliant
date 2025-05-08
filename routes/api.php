@@ -37,10 +37,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('events/{id}', [EventAplikasiController::class, 'destroy']);
 });
 
-// Kamar routes
+// Kamar routes - all public routes
+Route::get('kamar', [KamarController::class, 'index']);
+Route::get('kamar/{id}', [KamarController::class, 'show']);
+
+// Kamar routes - Protected routes for admin operations
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('kamar', [KamarController::class, 'index']);
-    Route::get('kamar/{id}', [KamarController::class, 'show']);
     Route::post('kamar', [KamarController::class, 'store']);
     Route::put('kamar/{id}', [KamarController::class, 'update']);
     Route::delete('kamar/{id}', [KamarController::class, 'destroy']);
