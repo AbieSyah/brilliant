@@ -9,8 +9,8 @@ class DatatableController extends Controller
 {
     public function index()
     {
-        $datatable = Datatable::all();
-        return view('admin.tables', compact('datatable'));
+        $datatable = Datatable::paginate(10);
+        return view('admin.index', compact('datatable'));
     }
 
     public function create()
@@ -24,7 +24,8 @@ class DatatableController extends Controller
             'name' => 'required|max:255',
             'position' => 'required|max:255',
             'age' => 'required|numeric',
-            'office' => 'required|max:255',
+            'office' => 'nul    lable|max:255',
+            'jenis_kelamin' => 'required|max:255',
             'start_date' => 'required|date'
         ]);
 

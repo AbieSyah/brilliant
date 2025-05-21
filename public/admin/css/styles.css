@@ -11241,3 +11241,32 @@ body {
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
 }
+
+/* Online Status Indicator */
+.online-status {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2ecc71;
+  box-shadow: 0 0 0 2px #343a40;
+  margin-bottom: -8px;
+  margin-left: -2px;
+  vertical-align: middle;
+}
+
+/* Username Text */
+.text-light {
+  font-size: 0.9rem;
+}
+
+/* Adjust dropdown alignment */
+.nav-item.dropdown {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure proper spacing */
+.nav-link.dropdown-toggle {
+  padding: 0.5rem;
+}

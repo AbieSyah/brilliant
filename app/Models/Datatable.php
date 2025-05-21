@@ -14,6 +14,7 @@ class Datatable extends Model
         'position',
         'age',
         'office',
+        'jenis_kelamin',
         'start_date'
     ];
 }

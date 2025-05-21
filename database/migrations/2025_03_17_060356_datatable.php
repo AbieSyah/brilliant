@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('position');
             $table->integer('age');
             $table->string('office');
+            $table->string('jenis_kelamin');
             $table->date('start_date');
             $table->timestamps();
         });

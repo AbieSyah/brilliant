@@ -1,608 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>BIECamp</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{ asset('landing-page/assets/favicon.ico')}}" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ asset ('landing-page/css/styles.css')}}" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="{{ asset ('landing-page/assets/img/logo.svg')}}" alt="..." /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brilliant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="{{ asset('/landing-page/css/styles.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section class="hero-section" id="Beranda">
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                    <span class="highlight">Booking Camp <br>Pilihan Kamu Di</span><br> <span
+                        class="camp-name">Brilliant Camp</span>
+                </h1>
+                <button class="hero-button" onclick="window.location.href='#booking'">Selengkapnya</button>
+                <p class="hero-subtext">By Brilliant English Course</p>
+            </div>
+        </div>
+        <!-- Wave Transisi -->
+        <div class="custom-shape-divider-bottom-1713946800">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,83.29C906.27,105.61,822.82,123,739.52,123c-77.87,0-154.6-15.94-231.49-29.9C432.61,78.37,346.26,63.67,263.1,52.06,183.81,41.24,101.58,33.49,20,35.64V0H1200V27.35C1112.79,50.24,1044.06,60.68,985.66,83.29Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M985.66,94.78C906.27,117.1,822.82,134.5,739.52,134.5c-77.87,0-154.6-15.94-231.49-29.9C432.61,89.86,346.26,75.16,263.1,63.55,183.81,52.73,101.58,44.98,20,47.13V0H1200V38.84C1112.79,61.73,1044.06,72.17,985.66,94.78Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M985.66,105.6C906.27,127.92,822.82,145.31,739.52,145.31c-77.87,0-154.6-15.94-231.49-29.9C432.61,100.69,346.26,86,263.1,74.39,183.81,63.57,101.58,55.82,20,57.97V0H1200V50.66C1112.79,73.55,1044.06,84,985.66,105.6Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="{{ asset('/landing-page/assets/img/logos/logo.svg') }}" alt="Logo" width="250" height="50"
+                    class="me-2">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#Beranda">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#galeri">Galeri</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#fasilitas">Fasilitas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#booking">Booking</a>
+                        </li>
+                        <!-- <a class="pesan-logo" href="#">
+                            <img src="{{ asset('/landing-page/assets/img/pesan.png') }}" alt="Logo" width="50"
+                                height="50">
+                        </a> -->
                     </ul>
                 </div>
             </div>
-        </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container">
-                <div class="masthead-subheading">Booking camp pilihan kamu di</div>
-                <div class="masthead-heading text-uppercase">Brilliant inn</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
-            </div>
-        </header>
-        <!-- Services-->
-        <section class="page-section" id="services">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Paket Belajar</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Responsive Design</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <h4 class="my-3">Web Security</h4>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                </div>
-                                <img class="img-fluid" src="{{ asset('landing-page/assets/img/portfolio/1.jpg')}}" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Explore</div>
-                                <div class="portfolio-caption-subheading text-muted">Graphic Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Finish</div>
-                                <div class="portfolio-caption-subheading text-muted">Identity</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Lines</div>
-                                <div class="portfolio-caption-subheading text-muted">Branding</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Southwest</div>
-                                <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
-                        <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Window</div>
-                                <div class="portfolio-caption-subheading text-muted">Photography</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About-->
-        <section class="page-section" id="about">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>December 2015</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>July 2020</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>
-                                Be Part
-                                <br />
-                                Of Our
-                                <br />
-                                Story!
-                            </h4>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <!-- Team-->
-        <section class="page-section bg-light" id="team">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                            <h4>Parveen Anand</h4>
-                            <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Marketer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
-                </div>
-            </div>
-        </section>
-        <!-- Clients-->
-        <div class="py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" /></a>
-                    </div>
-                </div>
-            </div>
         </div>
-        <!-- Contact-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+    </nav>
+    <section class="galeri-section py-5 position-relative" style="background-color: white; z-index: 2;" id="galeri">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Teks -->
+                <div class="col-lg-6 text-center text-lg-start mb-3 mb-lg-0 d-flex flex-column justify-content-center"
+                    style="margin-top: -50px;">
+                    <p class="text-uppercase fw-bold mb-2" style="color: #AE9518; font-size: 1.1rem; margin-top: 30px;">
+                        KENANGAN BERSAMA B-CAMP MU!
+                    </p>
+                    <h2 class="fw-bold mb-3" style="font-size: 3.3rem; line-height: 1.2;">
+                        <span style="color: #AE9518;">Galeri</span> <span style="color: #000;">B-Camp</span>
+                    </h2>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <button class="btn-gold" onclick="window.location.href='{{ route('galeri') }}'">Lihat Lebih
+                            Banyak -></button>
+                    </div>
+
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
+                <!-- Gambar -->
+                <div class="col-lg-6 d-flex justify-content-center">
+                    <div class="d-flex gap-3">
+                        <!-- Gambar besar -->
+                        <div class="rounded-4 overflow-hidden"
+                            style="width: 330px; height: 525px; margin-left: -30px; margin-top: 50px;">
+                            <iframe src="https://www.youtube.com/embed/H0TOfgpNJO4?rel=0&autoplay=0&modestbranding=1"
+                                title="YouTube Shorts Video" width="100%" height="100%" style="border:0;"
+                                allowfullscreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                            </iframe>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
-                </form>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio item 1 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Threads
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Illustration
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
+                        <!-- Dua gambar kecil -->
+                        <div class="d-flex flex-column gap-3">
+                            <img src="{{ asset('/landing-page/assets/img/G1.png') }}" class="img-fluid rounded-4"
+                                style="width: 180px; margin-top: 50px; margin-left: 20px;">
+                            <img src="{{ asset('/landing-page/assets/img/G2.png') }}" class="img-fluid rounded-4"
+                                style="width: 180px; margin-top: 15px; margin-left: 20px;">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 2 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Explore
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Graphic Design
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+
+        <!-- Fasilitas Section -->
+    </section>
+    <section class="fasilitas-section" id="fasilitas">
+        <div class="container text-center">
+            <div style="text-align: center;">
+                <h2
+                    style="font-family: 'Montserrat', sans-serif; font-weight: 800; color: #4E6C50; font-size: 2.5rem; margin-bottom: 10px;">
+                    Fasilitas
+                </h2>
+                <p
+                    style="font-family: 'Montserrat', sans-serif; font-weight: 500; color: #000000; font-size: 1.1rem; margin: 0;">
+                    Jelajahi Asrama dan Fasilitas lainnya di B-Camp!
+                </p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C2.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Reguler</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/regular-selatan.jpg') }}" alt="Reguler">
+                        <button class="detail-button" onclick="openPopup('Reguler')">Detail</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C1.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>VIP</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/vip-selatan.jpg') }}" alt="VIP">
+                        <button class="detail-button" onclick="openPopup('VIP')">Detail</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C3.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Homestay</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/homestay-selatan.jpg') }}" alt="Homestay">
+                        <button class="detail-button" onclick="openPopup('Homestay')">Detail</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center mt-5 mb-5">
+                <p
+                    style="font-family: 'Montserrat', sans-serif; font-weight: 500; color: #000000; font-size: 2rem; margin: 0;">
+                    Bieplus
+                </p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C2.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Camp Bieplus</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/vvip-bieplus.jpg') }}" alt="Reguler">
+                        <button class="detail-button" onclick="openPopup('VVIP-Bieplus')">Detail</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('/landing-page/assets/img/logos/C1.png') }}" alt="Logo VIP" class="card-logo">
+                    <h3>Ruang Kelas</h3>
+                    <div class="image-container">
+                        <img src="{{ asset('/landing-page/assets/img/kelas-bieplus.jpg') }}" alt="VIP">
+                        <button class="detail-button" onclick="openPopup('Kelas-Bieplus')">Detail</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 3 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Finish
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Identity
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+
+
+
+        <!-- Popup -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <div class="popup-header">
+                    <h2 id="popup-title"></h2>
+                </div>
+                <div class="popup-body">
+                    <div class="popup-description">
+                        <pre id="popup-description"></pre>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 4 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Lines
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Branding
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
+    </section>
+    <section class="booking-section" id="booking">
+        <div class="text-center w-100 position-relative">
+            <img src="{{ asset('/landing-page/assets/img/logos/hp.png') }}" class="img-fluid custom-hp-img" alt="Atas">
+        </div>
+        <div class="booking-text">
+            <h2 class="text-booking">
+                Booking Camp pilihanmu <br> sekarang juga!
+            </h2>
+            <p class="text-booking-desc">
+                Nikmati pengalaman belajar Bahasa Inggris yang menyenangkan dan nyaman di B-Camp. Dengan fasilitas
+                lengkap dan suasana yang mendukung, kamu bisa belajar sambil bersantai. Booking sekarang dan rasakan
+                perbedaannya!
+            </p>
+            <div class="booking-button-wrapper">
+                <a href="/download" class="btn-download">Download Sekarang</a>
+            </div>
+
+        </div>
+    </section>
+    <section class="ulasan-section">
+        <div class="container text-center">
+            <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 2rem; margin-top: -350px;">
+                <span style="color: #AE9518;">Gimana sih B-Camp</span><span style="color: #000000;"> menurut
+                    mereka?</span>
+            </h2>
+            <div class="container my-5">
+                <h3 class="text-center mb-4" style="font-size: 18px; margin-bottom: 100px;">Kamu bisa lihat pengalaman
+                    para pengguna B-Camp
+                    sebelumnya disini!</h3>
+                <div class="carousel-container" style="margin-bottom: -400px;">
+                    <button class="arrow-btn left" id="leftArrow" onclick="scrollCarousel(-300)">‹</button>
+                    <div class="comment-carousel" id="commentCarousel">
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Aisyah Salsabila</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Tempatnya nyaman banget, tutornya juga asik dan sabar ngajarinnya.
+                                    Aku jadi lebih percaya diri buat speaking. Recommended buat yang mau belajar bahasa
+                                    Inggris!</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/3.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Rizky Pratama</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Keren banget! Sistem belajarnya full English, jadi bener-bener
+                                    dipaksa buat ngomong. Camp-nya juga bersih dan nyaman, pokoknya top deh!</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Dewi Lestari</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Pengalaman belajar di sini seru banget! Tutornya ramah, metode
+                                    belajarnya juga gampang dipahami. Aku yang tadinya takut ngomong Inggris, sekarang
+                                    udah lumayan lancar.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/3.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Budi Santoso</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Belajar di sini sangat membantu! Tutornya profesional dan suasana
+                                    belajarnya menyenangkan. Aku jadi lebih paham grammar dan vocab.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Siti Aminah</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Aku suka banget belajar di sini! Lingkungannya mendukung buat
+                                    belajar bahasa Inggris. Tutornya juga sabar dan metode belajarnya efektif.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Ahmad Fauzi</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Pengalaman belajar yang luar biasa! Aku bisa ningkatin speaking
+                                    skill dalam waktu singkat. Tempatnya juga nyaman dan bersih.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Lina Marlina</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Tutornya ramah dan metode belajarnya sangat membantu. Aku jadi
+                                    lebih percaya diri berbicara dalam bahasa Inggris. Recommended!</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Fajar Nugroho</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Belajar di sini seru banget! Sistemnya full English, jadi terbiasa
+                                    ngomong tiap hari. Camp-nya juga nyaman dan bersih.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/2.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Rina Susanti</h5>
+                                <p class="card-text">2024</p>
+                                <p class="card-text">Aku sangat puas belajar di sini! Tutornya sabar dan metode
+                                    belajarnya mudah dipahami. Aku jadi lebih lancar speaking.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-card card">
+                            <div class="card-body text-center">
+                                <img src="{{ asset('/landing-page/assets/img/team/1.jpg') }}"
+                                    class="rounded-circle mb-3" alt="User"
+                                    style="width: 100px; height: 100px; object-fit: cover;">
+                                <h5 class="card-title">Eko Prasetyo</h5>
+                                <p class="card-text">2023</p>
+                                <p class="card-text">Pengalaman belajar yang tak terlupakan! Tutornya profesional,
+                                    lingkungannya nyaman, dan metode belajarnya sangat efektif.</p>
+                                <div class="rating">
+                                    <span>⭐⭐⭐⭐⭐</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button class="arrow-btn right" id="rightArrow" onclick="scrollCarousel(300)">›</button>
                 </div>
             </div>
         </div>
-        <!-- Portfolio item 5 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Southwest
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Website Design
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </section>
+    <section>
+        <div class="add-feedback text-center my-5" style="margin-bottom: auto">
+            <img src="{{ asset('/landing-page/assets/img/logos/pesan.png') }}" alt="Tambah Pesan Icon"
+                class="feedback-icon">
+            <span class="feedback-text">Tambah kesan & pesan-mu tentang B-Camp</span>
+            <a href="#formKesanPesan" class="feedback-btn">+ Tambahkan pesan</a>
         </div>
-        <!-- Portfolio item 6 modal popup-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..." />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>
-                                            <strong>Client:</strong>
-                                            Window
-                                        </li>
-                                        <li>
-                                            <strong>Category:</strong>
-                                            Photography
-                                        </li>
-                                    </ul>
-                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
-                                        <i class="fas fa-xmark me-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="{{ asset('landing-page/js/scripts.js')}}"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    </section>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    window.addEventListener('scroll', function () {
+        const logo = document.querySelector('.pesan-logo');
+        if (window.scrollY > 50) {
+            logo.classList.add('scrolled');
+        } else {
+            logo.classList.remove('scrolled');
+        }
+    });
+</script>
+<script>
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
+</script>
+<script>
+    // Replace your existing openPopup function
+    function openPopup(campType) {
+        const popup = document.getElementById('popup');
+        const title = document.getElementById('popup-title');
+        const description = document.getElementById('popup-description');
+        
+        const details = campDetails[campType];
+        
+        if (details) {
+            title.textContent = details.title;
+            description.textContent = details.description;
+            popup.style.display = 'block';
+        }
+    }
+</script>
+<script>
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = 'none';
+}
+
+// Also add close on escape key and outside click
+window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closePopup();
+    }
+});
+
+// Close when clicking outside the popup content
+document.querySelector('.popup').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closePopup();
+    }
+});
+</script>
+<script>
+    const carousel = document.getElementById('commentCarousel');
+    const leftArrow = document.getElementById('leftArrow');
+    const rightArrow = document.getElementById('rightArrow');
+    const cards = document.querySelectorAll('.comment-card');
+
+    function scrollCarousel(distance) {
+        carousel.scrollBy({ left: distance, behavior: 'smooth' });
+    }
+
+    function updateArrows() {
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        const scrollPosition = carousel.scrollLeft;
+
+        // Tampilkan tombol kiri jika sudah discroll ke kanan
+        if (scrollPosition > 0) {
+            leftArrow.classList.add('visible');
+        } else {
+            leftArrow.classList.remove('visible');
+        }
+
+        // Tampilkan tombol kanan jika masih ada konten yang bisa discroll
+        if (scrollPosition < maxScroll - 1) {
+            rightArrow.classList.add('visible');
+        } else {
+            rightArrow.classList.remove('visible');
+        }
+    }
+
+    function updateCenterCard() {
+        const carouselRect = carousel.getBoundingClientRect();
+        const carouselCenter = carouselRect.left + (carouselRect.width / 2);
+
+        cards.forEach(card => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + (cardRect.width / 2);
+
+            if (Math.abs(cardCenter - carouselCenter) < cardRect.width / 2) {
+                card.classList.add('center');
+            } else {
+                card.classList.remove('center');
+            }
+        });
+    }
+
+    function scrollToCenter() {
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        carousel.scrollTo({ left: maxScroll / 2, behavior: 'smooth' });
+    }
+
+    carousel.addEventListener('scroll', () => {
+        updateCenterCard();
+        updateArrows();
+    });
+    window.addEventListener('resize', () => {
+        updateCenterCard();
+        updateArrows();
+    });
+
+    // Scroll ke tengah saat halaman dimuat
+    window.addEventListener('load', () => {
+        scrollToCenter();
+        updateCenterCard();
+        updateArrows();
+    });
+
+    // Initial check
+    updateCenterCard();
+    updateArrows();
+</script>
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scroll ke bawah -> sembunyikan navbar
+            navbar.style.top = "-100px"; // sembunyikan di atas
+        } else {
+            // Scroll ke atas -> tampilkan navbar
+            navbar.style.top = "0";
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // untuk iOS
+    });
+</script>
+<script>
+    // Add this at the beginning of your script section
+    const campDetails = {
+        'Reguler': {
+            title: 'Kamar Reguler',
+            description: 'Kamar standar yang nyaman untuk 4 orang dengan fasilitas:\n' +
+                '• 2 tempat tidur tingkat\n' +
+                '• Lemari pakaian\n' +
+                '• Meja belajar\n' +
+                '• Kamar mandi bersama\n' +
+                '• Area WiFi'
+        },
+        'VIP': {
+            title: 'Kamar VIP',
+            description: 'Kamar premium untuk 2 orang dengan fasilitas:\n' +
+                '• 2 tempat tidur terpisah\n' +
+                '• AC\n' +
+                '• Lemari pakaian pribadi\n' +
+                '• Meja belajar pribadi\n' +
+                '• Kamar mandi dalam\n' +
+                '• WiFi kecepatan tinggi'
+        },
+        'Homestay': {
+            title: 'Kamar Homestay',
+            description: 'Pengalaman menginap seperti di rumah dengan fasilitas:\n' +
+                '• Kamar pribadi\n' +
+                '• AC\n' +
+                '• Ruang tamu\n' +
+                '• Dapur bersama\n' +
+                '• Kamar mandi dalam\n' +
+                '• WiFi premium'
+        },
+        'VVIP-Bieplus': {
+            title: 'VVIP Bieplus',
+            description: 'Kamar super premium dengan fasilitas terlengkap:\n' +
+                '• Kamar luas untuk 1-2 orang\n' +
+                '• AC\n' +
+                '• Smart TV\n' +
+                '• Mini pantry\n' +
+                '• Kamar mandi mewah\n' +
+                '• WiFi dedicated\n' +
+                '• Ruang belajar pribadi'
+        },
+        'Kelas-Bieplus': {
+            title: 'Ruang Kelas Bieplus',
+            description: 'Fasilitas pembelajaran modern:\n' +
+                '• Smart board\n' +
+                '• Proyektor HD\n' +
+                '• Sound system\n' +
+                '• AC\n' +
+                '• Meja kursi ergonomis\n' +
+                '• WiFi kecepatan tinggi\n' +
+                '• Kapasitas hingga 20 orang'
+        }
+    };
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('commentCarousel');
+    const carouselItems = carousel.querySelector('.carousel-items');
+    const cards = document.querySelectorAll('.comment-card');
+    
+    // Clone cards for infinite effect
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        carouselItems.appendChild(clone);
+    });
+
+    let isScrolling = false;
+    let startX;
+    let scrollLeft;
+
+    // Track scrolling position
+    carouselItems.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(() => {
+                const totalWidth = carouselItems.scrollWidth / 2;
+                const currentScroll = carouselItems.scrollLeft;
+
+                if (currentScroll >= totalWidth) {
+                    carouselItems.scrollLeft = 0;
+                } else if (currentScroll <= 0) {
+                    carouselItems.scrollLeft = totalWidth;
+                }
+                isScrolling = false;
+            });
+        }
+        isScrolling = true;
+    });
+
+    // Update arrow buttons
+    function updateArrows() {
+        const scrollPosition = carouselItems.scrollLeft;
+        leftArrow.style.display = 'flex';
+        rightArrow.style.display = 'flex';
+    }
+
+    // Scroll functions
+    function scrollCarousel(distance) {
+        const currentScroll = carouselItems.scrollLeft;
+        const targetScroll = currentScroll + distance;
+        
+        carouselItems.scrollTo({
+            left: targetScroll,
+            behavior: 'smooth'
+        });
+    }
+
+    // Arrow click handlers
+    document.getElementById('leftArrow').addEventListener('click', () => {
+        scrollCarousel(-300);
+    });
+
+    document.getElementById('rightArrow').addEventListener('click', () => {
+        scrollCarousel(300);
+    });
+
+    // Touch events for mobile
+    carouselItems.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - carouselItems.offsetLeft;
+        scrollLeft = carouselItems.scrollLeft;
+    });
+
+    carouselItems.addEventListener('touchmove', (e) => {
+        if (!startX) return;
+        const x = e.touches[0].pageX - carouselItems.offsetLeft;
+        const walk = (x - startX) * 2;
+        carouselItems.scrollLeft = scrollLeft - walk;
+    });
+
+    carouselItems.addEventListener('touchend', () => {
+        startX = null;
+    });
+
+    // Initialize
+    updateArrows();
+    window.addEventListener('resize', updateArrows);
+});
+</script>
+
 </html>
