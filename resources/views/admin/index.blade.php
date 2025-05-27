@@ -10,6 +10,8 @@
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="{{ asset('/admin/css/styles.css') }}" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -36,7 +38,6 @@
                     <span class="text-light ms-2">Admin BCamp</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Pengaturan</a></li>
                     <li><a class="dropdown-item" href="#!">Log Aktivitas</a></li>
                     <li>
                         <hr class="dropdown-divider" />
@@ -101,10 +102,6 @@
                                 </a>
                             </nav>
                         </div>
-                        <a class="nav-link" href="{{ route('dashboard.tables') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Testing
-                        </a>
                     </div>
                 </div>
             </nav>

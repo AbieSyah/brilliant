@@ -6,21 +6,25 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DatatableController;
 use App\Http\Controllers\PesananController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\WebsiteBerandaController;
+use App\Http\Controllers\WebsiteGaleriController;
+use App\Http\Controllers\WebsiteFasilitasController;
+use App\Http\Controllers\WebsiteReviewController;
+use App\Http\Controllers\AplikasiController; // Points to controller_api folder
+use App\Http\Controllers\UserAplikasiController;
+use App\Models\AplikasiBeranda;
+use App\Models\AplikasiEvent;
+use App\Models\AplikasiFasilitas;
+use App\Models\WebsiteReview;
+use App\Models\WebsiteGaleri;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/galeri', function () {
+    return view('galeri');
+})->name('galeri');
 
 Route::get('/home', function () {
     return view('home');
@@ -37,73 +41,105 @@ Route::middleware(['auth'])->group(function () {
     // Dashboard route
     Route::get('/adminn', function () {
         return view('admin.index');
-    })->name('admin.dashboard'); // This is the main dashboard route
+    })->name('admin.dashboard');
 
-    // Website Content Management Routes
     Route::prefix('admin/konten')->name('admin.konten.')->group(function () {
-        // Website routes
+        // Website routes with data
         Route::get('/website', function () {
-            return view('admin.konten.website.website');
+            $beranda = \App\Models\WebsiteBeranda::first();
+            $galeri = \App\Models\WebsiteGaleri::all();
+            $fasilitas = \App\Models\WebsiteFasilitas::all();
+            $reviews = \App\Models\WebsiteReview::all();
+
+            return view('admin.konten.website.website', compact(
+                'beranda',
+                'galeri',
+                'fasilitas',
+                'reviews'
+            ));
         })->name('website');
 
-        Route::get('/beranda', function () {
-            return view('admin.konten.website.beranda');
-        })->name('beranda');
+        Route::prefix('website')->group(function () {
+            // Beranda routes
+            Route::post('/beranda/update', [WebsiteBerandaController::class, 'update'])
+                ->name('website.beranda.update');
+                
+            // Galeri routes
+            Route::post('/galeri/update', [WebsiteGaleriController::class, 'update'])
+                ->name('website.galeri.update');
+                
+            // Fasilitas routes
+            Route::prefix('fasilitas')->name('website.fasilitas.')->group(function () {
+                Route::post('/', [WebsiteFasilitasController::class, 'store'])->name('store');
+                Route::post('/update', [WebsiteFasilitasController::class, 'update'])->name('update'); // Changed route
+                Route::get('/{id}/edit', [WebsiteFasilitasController::class, 'edit'])->name('edit');
+                Route::delete('/{id}', [WebsiteFasilitasController::class, 'destroy'])->name('destroy');
+            });
+            
+            // Review routes
+            Route::prefix('review')->name('website.review.')->group(function () {
+                Route::post('/store', [WebsiteReviewController::class, 'store'])->name('store');
+                Route::get('/{id}/edit', [WebsiteReviewController::class, 'edit'])->name('edit');
+                Route::put('/{id}', [WebsiteReviewController::class, 'update'])->name('update');
+                Route::delete('/{id}', [WebsiteReviewController::class, 'destroy'])->name('destroy');
+            });
 
-        Route::get('/galeri', function () {
-            return view('admin.konten.website.galeri');
-        })->name('galeri');
+            // Galeri routes
+            Route::prefix('galeri')->name('website.galeri.')->group(function () {
+                Route::post('/image', [WebsiteGaleriController::class, 'storeImage'])->name('store.image');
+                Route::post('/video', [WebsiteGaleriController::class, 'storeVideo'])->name('store.video');
+                Route::post('/video-url', [WebsiteGaleriController::class, 'storeVideoUrl'])->name('store.video.url');
+                Route::delete('/{id}', [WebsiteGaleriController::class, 'destroy'])->name('destroy');
+            });
+        });
 
-        Route::get('/fasilitas', function () {
-            return view('admin.konten.website.fasilitas');
-        })->name('fasilitas');
-
-        Route::get('/booking', function () {
-            return view('admin.konten.website.booking');
-        })->name('booking');
-
-        Route::get('/footer', function () {
-            return view('admin.konten.website.footer');
-        })->name('footer');
-
-        // Aplikasi routes
+        // Aplikasi routes with data
         Route::get('/aplikasi', function () {
-            return view('admin.konten.aplikasi.aplikasi');
+            $beranda = \App\Models\AplikasiBeranda::first();
+            $event = \App\Models\AplikasiEvent::first();
+            $fasilitas = \App\Models\AplikasiFasilitas::all(); // Change first() to all()
+            $events = \App\Models\AplikasiEvent::all(); // Add this line
+            
+            return view('admin.konten.aplikasi.aplikasi', compact(
+                'beranda',
+                'event',
+                'events', // Add this
+                'fasilitas'
+            ));
         })->name('aplikasi');
 
-        Route::get('/aplikasi/beranda', function () {
-            return view('admin.konten.aplikasi.beranda');
-        })->name('beranda.aplikasi');
+        // CRUD routes for Aplikasi content
+        Route::post('/aplikasi/beranda/update', [AplikasiController::class, 'updateBeranda'])
+            ->name('aplikasi.beranda.update');
+        Route::post('/aplikasi/event/update', [AplikasiController::class, 'updateEvent'])
+            ->name('aplikasi.event.update');
+        Route::post('/aplikasi/fasilitas/update', [AplikasiController::class, 'updateFasilitas'])
+            ->name('aplikasi.fasilitas.update');
 
-        Route::get('/aplikasi/galeri', function () {
-            return view('admin.konten.aplikasi.galeri');
-        })->name('galeri.aplikasi');
-
-        Route::get('/aplikasi/fasilitas', function () {
-            return view('admin.konten.aplikasi.fasilitas');
-        })->name('fasilitas.aplikasi');
-
-        Route::get('/aplikasi/booking', function () {
-            return view('admin.konten.aplikasi.booking');
-        })->name('booking.aplikasi');
-
-        Route::get('/aplikasi/footer', function () {
-            return view('admin.konten.aplikasi.footer');
-        })->name('footer.aplikasi');
-
-        Route::get('/aplikasi/kamar', function () {
-            return view('admin.konten.aplikasi.kamar');
-        })->name('kamar.aplikasi');
+        // Review routes
+        Route::prefix('website/review')->name('website.review.')->group(function () {
+            Route::post('/store', [WebsiteReviewController::class, 'store'])->name('store');
+            Route::get('/{id}/edit', [WebsiteReviewController::class, 'edit'])->name('edit');
+            Route::put('/{id}', [WebsiteReviewController::class, 'update'])->name('update');
+            Route::delete('/{id}', [WebsiteReviewController::class, 'destroy'])->name('destroy');
+        });
     });
 
-    // Tables route
-    Route::get('/adminn/tables', function () {
-        $datatable = \App\Models\Datatable::all();
-        return view('admin.tables', compact('datatable'));
-    })->name('dashboard.tables');
-
-    // If you need the datatable functionality, move it to a different route
-    Route::get('/adminn/data', [DatatableController::class, 'index'])->name('datatable.index');
+    Route::prefix('admin/konten/aplikasi')->group(function () {
+        Route::get('/', [AplikasiController::class, 'index'])->name('admin.konten.aplikasi');
+        
+        // Event routes
+        Route::post('/event', [AplikasiController::class, 'eventStore'])->name('admin.konten.aplikasi.event.store');
+        Route::get('/event/{id}/edit', [AplikasiController::class, 'eventEdit'])->name('admin.konten.aplikasi.event.edit');
+        Route::put('/event/{id}', [AplikasiController::class, 'eventUpdate'])->name('admin.konten.aplikasi.event.update');
+        Route::delete('/event/{id}', [AplikasiController::class, 'eventDestroy'])->name('admin.konten.aplikasi.event.delete');
+        
+        // Fasilitas routes
+        Route::post('/fasilitas', [AplikasiController::class, 'fasilitasStore'])->name('admin.konten.aplikasi.fasilitas.store');
+        Route::get('/fasilitas/{id}/edit', [AplikasiController::class, 'fasilitasEdit'])->name('admin.konten.aplikasi.fasilitas.edit');
+        Route::put('/fasilitas/{id}', [AplikasiController::class, 'fasilitasUpdate'])->name('admin.konten.aplikasi.fasilitas.update');
+        Route::delete('/fasilitas/{id}', [AplikasiController::class, 'fasilitasDestroy'])->name('admin.konten.aplikasi.fasilitas.destroy');    })
+        ;
 
     // Pesanan routes
     Route::get('/admin/pesanan', [PesananController::class, 'index'])->name('admin.pesanan.main');
@@ -118,8 +154,11 @@ Route::post('/register', [RegisterController::class, 'store'])
 Route::get('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'showResetForm'])->name('password.request');
 Route::post('password/reset', [App\Http\Controllers\ResetPasswordController::class, 'update'])->name('password.update');
 
-Route::resource('datatable', DatatableController::class);
-
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/profile', [LoginController::class, 'getProfile']);
+    Route::post('/profile/update', [LoginController::class, 'updateProfile']);
+    Route::post('/logout', [LoginController::class, 'logout']);
+});
 
 
 
